@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>피아노 시창 연습: MIDI 리듬 게임</title>
+    <!-- Tone.js -->
+    <script src="https://unpkg.com/tone"></script>
+    <!-- Tone.js MIDI 로더 -->
+    <script src="https://unpkg.com/@tonejs/midi"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <div id="controls">
+        <div class="control-group">
+            <div class="file-upload">
+                <button>📂 MIDI 열기</button>
+                <input type="file" id="midi-input" accept=".mid,.midi">
+            </div>
+            <span id="file-name-display" style="font-size: 12px; color: #ccc; margin-left: 5px; max-width: 100px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: none;"></span>
+        </div>
+
+        <div class="control-group">
+            <label>샘플:</label>
+            <select id="sel-sample">
+                <option value="">선택하세요</option>
+            </select>
+        </div>
+
+        <button id="btn-play">▶ 재생</button>
+        <button id="btn-stop" class="stop">■ 정지/재설정</button>
+        
+        <div class="control-group">
+            <label>화면:</label>
+            <button class="zoom-btn" id="btn-zoom-out" title="축소">－</button>
+            <span id="zoom-level" style="min-width: 40px; text-align: center; cursor:pointer;" title="클릭시 자동 맞춤">100%</span>
+            <button class="zoom-btn" id="btn-zoom-in" title="확대">＋</button>
+        </div>
+
+        <div class="control-group">
+            <label>구간:</label>
+            <select id="sel-section">
+                <option value="-1">전곡</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label><input type="checkbox" id="chk-right" checked> R</label>
+            <label><input type="checkbox" id="chk-left" checked> L</label>
+            <label id="midi-status-icon" style="color:red; cursor:help;" title="MIDI 기기 연결 상태">&#9679;</label>
+        </div>
+
+        <div class="control-group">
+            <label>반복:</label>
+            <select id="sel-repeat">
+                <option value="0">없음</option>
+                <option value="1">1회</option>
+                <option value="2">2회</option>
+                <option value="3">3회</option>
+                <option value="4">4회</option>
+                <option value="5">5회</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>속도:</label>
+            <input type="range" id="rng-speed" min="0.5" max="1.5" step="0.1" value="1.0">
+            <span id="txt-speed">1.0x</span>
+        </div>
+
+        <div class="control-group legend">
+            <div title="Left Pinky / Right Thumb"><span class="dot" style="background:#ff4444;"></span>L5/R1</div>
+            <div title="Left Ring / Right Index"><span class="dot" style="background:#ffeb3b;"></span>L4/R2</div>
+            <div title="Left Middle / Right Middle"><span class="dot" style="background:#00e676;"></span>L3/R3</div>
+            <div title="Left Index / Right Ring"><span class="dot" style="background:#536dfe;"></span>L2/R4</div>
+            <div title="Left Thumb / Right Pinky"><span class="dot" style="background:#d05ce3;"></span>L1/R5</div>
+        </div>
+    </div>
+
+    <!-- 화면 중앙 고정 가이드라인 -->
+    <div id="center-guide"></div>
+
+    <div id="game-wrapper">
+        <div id="game-container">
+            <canvas id="pianoCanvas"></canvas>
+            <div id="status-msg">MIDI 파일을 업로드하거나<br>샘플을 선택하여 연습하세요</div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
