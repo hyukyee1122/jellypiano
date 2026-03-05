@@ -1,0 +1,3369 @@
+{
+  "title": "Chord Scale Practice",
+  "composer": "",
+  "bpm": 80,
+  "timeSignature": "4/4",
+  "totalDuration": 100.88,
+  "notes": [
+    {
+      "note": 48,
+      "startTime": 0.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 60,
+      "startTime": 0.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 48,
+      "startTime": 0.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 60,
+      "startTime": 0.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 50,
+      "startTime": 1.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 62,
+      "startTime": 1.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 52,
+      "startTime": 1.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 64,
+      "startTime": 1.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 53,
+      "startTime": 1.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 65,
+      "startTime": 1.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 55,
+      "startTime": 2.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 67,
+      "startTime": 2.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 57,
+      "startTime": 2.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 69,
+      "startTime": 2.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 59,
+      "startTime": 3.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 71,
+      "startTime": 3.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 60,
+      "startTime": 3.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 72,
+      "startTime": 3.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 59,
+      "startTime": 3.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 71,
+      "startTime": 3.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 57,
+      "startTime": 4.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 69,
+      "startTime": 4.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 55,
+      "startTime": 4.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 67,
+      "startTime": 4.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 53,
+      "startTime": 4.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 65,
+      "startTime": 4.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 52,
+      "startTime": 5.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 64,
+      "startTime": 5.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 50,
+      "startTime": 5.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 62,
+      "startTime": 5.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 48,
+      "startTime": 6.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 60,
+      "startTime": 6.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 50,
+      "startTime": 6.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 62,
+      "startTime": 6.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 50,
+      "startTime": 7.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 62,
+      "startTime": 7.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 52,
+      "startTime": 7.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 64,
+      "startTime": 7.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 54,
+      "startTime": 8.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 66,
+      "startTime": 8.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 55,
+      "startTime": 8.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 67,
+      "startTime": 8.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 57,
+      "startTime": 9.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 69,
+      "startTime": 9.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 59,
+      "startTime": 9.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 71,
+      "startTime": 9.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 61,
+      "startTime": 9.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 73,
+      "startTime": 9.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 62,
+      "startTime": 10.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 74,
+      "startTime": 10.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 61,
+      "startTime": 10.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 73,
+      "startTime": 10.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 59,
+      "startTime": 10.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 71,
+      "startTime": 10.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 57,
+      "startTime": 11.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 69,
+      "startTime": 11.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 55,
+      "startTime": 11.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 67,
+      "startTime": 11.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 54,
+      "startTime": 12.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 66,
+      "startTime": 12.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 52,
+      "startTime": 12.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 64,
+      "startTime": 12.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 50,
+      "startTime": 12.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 62,
+      "startTime": 12.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 52,
+      "startTime": 13.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 64,
+      "startTime": 13.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 52,
+      "startTime": 14.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 64,
+      "startTime": 14.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 54,
+      "startTime": 14.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 66,
+      "startTime": 14.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 56,
+      "startTime": 15.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 68,
+      "startTime": 15.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 57,
+      "startTime": 15.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 69,
+      "startTime": 15.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 59,
+      "startTime": 15.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 71,
+      "startTime": 15.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 61,
+      "startTime": 16.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 73,
+      "startTime": 16.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 63,
+      "startTime": 16.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 75,
+      "startTime": 16.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 64,
+      "startTime": 16.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 76,
+      "startTime": 16.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 63,
+      "startTime": 17.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 75,
+      "startTime": 17.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 61,
+      "startTime": 17.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 73,
+      "startTime": 17.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 59,
+      "startTime": 18.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 71,
+      "startTime": 18.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 57,
+      "startTime": 18.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 69,
+      "startTime": 18.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 56,
+      "startTime": 18.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 68,
+      "startTime": 18.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 54,
+      "startTime": 19.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 66,
+      "startTime": 19.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 52,
+      "startTime": 19.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 64,
+      "startTime": 19.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 53,
+      "startTime": 20.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 65,
+      "startTime": 20.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 53,
+      "startTime": 21.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 65,
+      "startTime": 21.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 55,
+      "startTime": 21.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 67,
+      "startTime": 21.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 57,
+      "startTime": 21.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 69,
+      "startTime": 21.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 58,
+      "startTime": 22.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 70,
+      "startTime": 22.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 60,
+      "startTime": 22.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 72,
+      "startTime": 22.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 62,
+      "startTime": 22.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 74,
+      "startTime": 22.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 64,
+      "startTime": 23.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 76,
+      "startTime": 23.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 65,
+      "startTime": 23.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 77,
+      "startTime": 23.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 64,
+      "startTime": 24.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 76,
+      "startTime": 24.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 62,
+      "startTime": 24.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 74,
+      "startTime": 24.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 60,
+      "startTime": 24.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 72,
+      "startTime": 24.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 58,
+      "startTime": 25.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 70,
+      "startTime": 25.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 57,
+      "startTime": 25.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 69,
+      "startTime": 25.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 55,
+      "startTime": 25.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 67,
+      "startTime": 25.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 53,
+      "startTime": 26.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 65,
+      "startTime": 26.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 55,
+      "startTime": 27.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 67,
+      "startTime": 27.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 55,
+      "startTime": 27.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 67,
+      "startTime": 27.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 57,
+      "startTime": 28.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 69,
+      "startTime": 28.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 59,
+      "startTime": 28.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 71,
+      "startTime": 28.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 60,
+      "startTime": 28.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 72,
+      "startTime": 28.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 62,
+      "startTime": 29.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 74,
+      "startTime": 29.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 64,
+      "startTime": 29.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 76,
+      "startTime": 29.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 66,
+      "startTime": 30.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 78,
+      "startTime": 30.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 67,
+      "startTime": 30.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 79,
+      "startTime": 30.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 66,
+      "startTime": 30.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 78,
+      "startTime": 30.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 64,
+      "startTime": 31.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 76,
+      "startTime": 31.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 62,
+      "startTime": 31.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 74,
+      "startTime": 31.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 60,
+      "startTime": 31.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 72,
+      "startTime": 31.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 59,
+      "startTime": 32.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 71,
+      "startTime": 32.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 57,
+      "startTime": 32.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 69,
+      "startTime": 32.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 55,
+      "startTime": 33.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 67,
+      "startTime": 33.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 57,
+      "startTime": 33.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 69,
+      "startTime": 33.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 57,
+      "startTime": 34.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 69,
+      "startTime": 34.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 59,
+      "startTime": 34.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 71,
+      "startTime": 34.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 61,
+      "startTime": 35.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 73,
+      "startTime": 35.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 62,
+      "startTime": 35.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 74,
+      "startTime": 35.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 64,
+      "startTime": 36.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 76,
+      "startTime": 36.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 66,
+      "startTime": 36.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 78,
+      "startTime": 36.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 68,
+      "startTime": 36.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 80,
+      "startTime": 36.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 69,
+      "startTime": 37.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 81,
+      "startTime": 37.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 68,
+      "startTime": 37.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 80,
+      "startTime": 37.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 66,
+      "startTime": 37.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 78,
+      "startTime": 37.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 64,
+      "startTime": 38.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 76,
+      "startTime": 38.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 62,
+      "startTime": 38.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 74,
+      "startTime": 38.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 61,
+      "startTime": 39.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 73,
+      "startTime": 39.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 59,
+      "startTime": 39.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 71,
+      "startTime": 39.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 57,
+      "startTime": 39.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 69,
+      "startTime": 39.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 59,
+      "startTime": 40.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 71,
+      "startTime": 40.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 59,
+      "startTime": 41.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 71,
+      "startTime": 41.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 61,
+      "startTime": 41.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 73,
+      "startTime": 41.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 63,
+      "startTime": 42.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 75,
+      "startTime": 42.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 64,
+      "startTime": 42.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 76,
+      "startTime": 42.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 66,
+      "startTime": 42.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 78,
+      "startTime": 42.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 68,
+      "startTime": 43.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 80,
+      "startTime": 43.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 70,
+      "startTime": 43.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 82,
+      "startTime": 43.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 71,
+      "startTime": 43.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 83,
+      "startTime": 43.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 70,
+      "startTime": 44.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 82,
+      "startTime": 44.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 68,
+      "startTime": 44.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 80,
+      "startTime": 44.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 66,
+      "startTime": 45.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 78,
+      "startTime": 45.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 64,
+      "startTime": 45.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 76,
+      "startTime": 45.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 63,
+      "startTime": 45.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 75,
+      "startTime": 45.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 61,
+      "startTime": 46.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 73,
+      "startTime": 46.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 59,
+      "startTime": 46.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 71,
+      "startTime": 46.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 60,
+      "startTime": 47.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 72,
+      "startTime": 47.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 60,
+      "startTime": 48.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 72,
+      "startTime": 48.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 62,
+      "startTime": 48.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 74,
+      "startTime": 48.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 64,
+      "startTime": 48.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 76,
+      "startTime": 48.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 65,
+      "startTime": 49.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 77,
+      "startTime": 49.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 67,
+      "startTime": 49.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 79,
+      "startTime": 49.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 69,
+      "startTime": 49.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 81,
+      "startTime": 49.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 71,
+      "startTime": 50.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 83,
+      "startTime": 50.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 72,
+      "startTime": 50.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 84,
+      "startTime": 50.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 71,
+      "startTime": 51.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 83,
+      "startTime": 51.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 69,
+      "startTime": 51.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 81,
+      "startTime": 51.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 67,
+      "startTime": 51.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 79,
+      "startTime": 51.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 65,
+      "startTime": 52.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 77,
+      "startTime": 52.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 64,
+      "startTime": 52.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 76,
+      "startTime": 52.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 62,
+      "startTime": 52.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 74,
+      "startTime": 52.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 60,
+      "startTime": 53.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 72,
+      "startTime": 53.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 59,
+      "startTime": 54.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 71,
+      "startTime": 54.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 59,
+      "startTime": 54.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 71,
+      "startTime": 54.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 61,
+      "startTime": 55.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 73,
+      "startTime": 55.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 63,
+      "startTime": 55.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 75,
+      "startTime": 55.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 64,
+      "startTime": 55.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 76,
+      "startTime": 55.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 66,
+      "startTime": 56.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 78,
+      "startTime": 56.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 68,
+      "startTime": 56.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 80,
+      "startTime": 56.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 70,
+      "startTime": 57.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 82,
+      "startTime": 57.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 71,
+      "startTime": 57.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 83,
+      "startTime": 57.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 70,
+      "startTime": 57.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 82,
+      "startTime": 57.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 68,
+      "startTime": 58.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 80,
+      "startTime": 58.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 66,
+      "startTime": 58.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 78,
+      "startTime": 58.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 64,
+      "startTime": 58.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 76,
+      "startTime": 58.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 63,
+      "startTime": 59.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 75,
+      "startTime": 59.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 61,
+      "startTime": 59.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 73,
+      "startTime": 59.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 59,
+      "startTime": 60.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 71,
+      "startTime": 60.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 57,
+      "startTime": 60.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 69,
+      "startTime": 60.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 57,
+      "startTime": 61.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 69,
+      "startTime": 61.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 59,
+      "startTime": 61.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 71,
+      "startTime": 61.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 61,
+      "startTime": 62.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 73,
+      "startTime": 62.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 62,
+      "startTime": 62.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 74,
+      "startTime": 62.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 64,
+      "startTime": 63.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 76,
+      "startTime": 63.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 66,
+      "startTime": 63.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 78,
+      "startTime": 63.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 68,
+      "startTime": 63.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 80,
+      "startTime": 63.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 69,
+      "startTime": 64.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 81,
+      "startTime": 64.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 68,
+      "startTime": 64.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 80,
+      "startTime": 64.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 66,
+      "startTime": 64.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 78,
+      "startTime": 64.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 64,
+      "startTime": 65.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 76,
+      "startTime": 65.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 62,
+      "startTime": 65.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 74,
+      "startTime": 65.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 61,
+      "startTime": 66.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 73,
+      "startTime": 66.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 59,
+      "startTime": 66.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 71,
+      "startTime": 66.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 57,
+      "startTime": 66.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 69,
+      "startTime": 66.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 55,
+      "startTime": 67.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 67,
+      "startTime": 67.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 55,
+      "startTime": 68.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 67,
+      "startTime": 68.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 57,
+      "startTime": 68.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 69,
+      "startTime": 68.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 59,
+      "startTime": 69.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 71,
+      "startTime": 69.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 60,
+      "startTime": 69.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 72,
+      "startTime": 69.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 62,
+      "startTime": 69.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 74,
+      "startTime": 69.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 64,
+      "startTime": 70.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 76,
+      "startTime": 70.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 66,
+      "startTime": 70.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 78,
+      "startTime": 70.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 67,
+      "startTime": 70.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 79,
+      "startTime": 70.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 66,
+      "startTime": 71.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 78,
+      "startTime": 71.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 64,
+      "startTime": 71.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 76,
+      "startTime": 71.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 62,
+      "startTime": 72.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 74,
+      "startTime": 72.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 60,
+      "startTime": 72.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 72,
+      "startTime": 72.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 59,
+      "startTime": 72.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 71,
+      "startTime": 72.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 57,
+      "startTime": 73.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 69,
+      "startTime": 73.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 55,
+      "startTime": 73.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 67,
+      "startTime": 73.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 53,
+      "startTime": 74.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 65,
+      "startTime": 74.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 53,
+      "startTime": 75.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 65,
+      "startTime": 75.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 55,
+      "startTime": 75.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 67,
+      "startTime": 75.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 57,
+      "startTime": 75.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 69,
+      "startTime": 75.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 58,
+      "startTime": 76.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 70,
+      "startTime": 76.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 60,
+      "startTime": 76.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 72,
+      "startTime": 76.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 62,
+      "startTime": 76.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 74,
+      "startTime": 76.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 64,
+      "startTime": 77.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 76,
+      "startTime": 77.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 65,
+      "startTime": 77.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 77,
+      "startTime": 77.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 64,
+      "startTime": 78.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 76,
+      "startTime": 78.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 62,
+      "startTime": 78.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 74,
+      "startTime": 78.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 60,
+      "startTime": 78.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 72,
+      "startTime": 78.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 58,
+      "startTime": 79.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 70,
+      "startTime": 79.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 57,
+      "startTime": 79.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 69,
+      "startTime": 79.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 55,
+      "startTime": 79.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 67,
+      "startTime": 79.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 53,
+      "startTime": 80.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 65,
+      "startTime": 80.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 52,
+      "startTime": 81.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 64,
+      "startTime": 81.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 52,
+      "startTime": 81.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 64,
+      "startTime": 81.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 54,
+      "startTime": 82.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 66,
+      "startTime": 82.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 56,
+      "startTime": 82.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 68,
+      "startTime": 82.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 57,
+      "startTime": 82.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 69,
+      "startTime": 82.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 59,
+      "startTime": 83.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 71,
+      "startTime": 83.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 61,
+      "startTime": 83.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 73,
+      "startTime": 83.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 63,
+      "startTime": 84.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 75,
+      "startTime": 84.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 64,
+      "startTime": 84.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 76,
+      "startTime": 84.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 63,
+      "startTime": 84.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 75,
+      "startTime": 84.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 61,
+      "startTime": 85.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 73,
+      "startTime": 85.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 59,
+      "startTime": 85.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 71,
+      "startTime": 85.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 57,
+      "startTime": 85.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 69,
+      "startTime": 85.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 56,
+      "startTime": 86.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 68,
+      "startTime": 86.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 54,
+      "startTime": 86.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 66,
+      "startTime": 86.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 52,
+      "startTime": 87.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 64,
+      "startTime": 87.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 50,
+      "startTime": 87.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 62,
+      "startTime": 87.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 50,
+      "startTime": 88.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 62,
+      "startTime": 88.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 52,
+      "startTime": 88.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 64,
+      "startTime": 88.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 54,
+      "startTime": 89.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 66,
+      "startTime": 89.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 55,
+      "startTime": 89.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 67,
+      "startTime": 89.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 57,
+      "startTime": 90.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 69,
+      "startTime": 90.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 59,
+      "startTime": 90.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 71,
+      "startTime": 90.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 61,
+      "startTime": 90.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 73,
+      "startTime": 90.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 62,
+      "startTime": 91.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 74,
+      "startTime": 91.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 61,
+      "startTime": 91.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 73,
+      "startTime": 91.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 59,
+      "startTime": 91.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 71,
+      "startTime": 91.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 57,
+      "startTime": 92.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 69,
+      "startTime": 92.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 55,
+      "startTime": 92.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 67,
+      "startTime": 92.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 54,
+      "startTime": 93.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 66,
+      "startTime": 93.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 52,
+      "startTime": 93.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 64,
+      "startTime": 93.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 50,
+      "startTime": 93.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 62,
+      "startTime": 93.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 48,
+      "startTime": 94.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 60,
+      "startTime": 94.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 48,
+      "startTime": 95.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 60,
+      "startTime": 95.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 50,
+      "startTime": 95.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 62,
+      "startTime": 95.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 52,
+      "startTime": 96.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 64,
+      "startTime": 96.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 53,
+      "startTime": 96.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 65,
+      "startTime": 96.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 55,
+      "startTime": 96.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 67,
+      "startTime": 96.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 57,
+      "startTime": 97.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 69,
+      "startTime": 97.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 59,
+      "startTime": 97.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 71,
+      "startTime": 97.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 60,
+      "startTime": 97.875,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 72,
+      "startTime": 97.875,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 5
+    },
+    {
+      "note": 59,
+      "startTime": 98.25,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 71,
+      "startTime": 98.25,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 4
+    },
+    {
+      "note": 57,
+      "startTime": 98.625,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 69,
+      "startTime": 98.625,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 55,
+      "startTime": 99.0,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 1
+    },
+    {
+      "note": 67,
+      "startTime": 99.0,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 53,
+      "startTime": 99.375,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 2
+    },
+    {
+      "note": 65,
+      "startTime": 99.375,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    },
+    {
+      "note": 52,
+      "startTime": 99.75,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 3
+    },
+    {
+      "note": 64,
+      "startTime": 99.75,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 3
+    },
+    {
+      "note": 50,
+      "startTime": 100.125,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 4
+    },
+    {
+      "note": 62,
+      "startTime": 100.125,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 2
+    },
+    {
+      "note": 48,
+      "startTime": 100.5,
+      "duration": 0.375,
+      "hand": "left",
+      "finger": 5
+    },
+    {
+      "note": 60,
+      "startTime": 100.5,
+      "duration": 0.375,
+      "hand": "right",
+      "finger": 1
+    }
+  ]
+}
