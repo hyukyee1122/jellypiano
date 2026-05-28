@@ -1,0 +1,1818 @@
+{
+  "title": "고향의 봄",
+  "composer": "홍난파",
+  "bpm": 80.0,
+  "timeSignature": "4/4",
+  "totalDuration": 80.0,
+  "notes": [
+    {
+      "time": 0.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 2.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 0
+    },
+    {
+      "time": 0.0,
+      "note": "E5",
+      "midi": 76,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 5,
+      "measure": 0
+    },
+    {
+      "time": 0.0,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 0
+    },
+    {
+      "time": 0.5,
+      "note": "E3",
+      "midi": 52,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 3,
+      "measure": 0
+    },
+    {
+      "time": 1.0,
+      "note": "E5",
+      "midi": 76,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 5,
+      "measure": 0
+    },
+    {
+      "time": 1.0,
+      "note": "G3",
+      "midi": 55,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 0
+    },
+    {
+      "time": 2.0,
+      "note": "Ab4",
+      "midi": 68,
+      "duration": 2.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 0
+    },
+    {
+      "time": 2.0,
+      "note": "D5",
+      "midi": 74,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 5,
+      "measure": 0
+    },
+    {
+      "time": 2.0,
+      "note": "E3",
+      "midi": 52,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 3,
+      "measure": 0
+    },
+    {
+      "time": 2.0,
+      "note": "Ab3",
+      "midi": 56,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 0
+    },
+    {
+      "time": 3.0,
+      "note": "D5",
+      "midi": 74,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 4,
+      "measure": 0
+    },
+    {
+      "time": 4.0,
+      "note": "A4",
+      "midi": 69,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 1
+    },
+    {
+      "time": 4.0,
+      "note": "C5",
+      "midi": 72,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 1
+    },
+    {
+      "time": 4.0,
+      "note": "F3",
+      "midi": 53,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 1
+    },
+    {
+      "time": 4.5,
+      "note": "A3",
+      "midi": 57,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 1
+    },
+    {
+      "time": 5.0,
+      "note": "D5",
+      "midi": 74,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 4,
+      "measure": 1
+    },
+    {
+      "time": 5.0,
+      "note": "A3",
+      "midi": 57,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 1
+    },
+    {
+      "time": 5.5,
+      "note": "C5",
+      "midi": 72,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 3,
+      "measure": 1
+    },
+    {
+      "time": 6.0,
+      "note": "A4",
+      "midi": 69,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 1
+    },
+    {
+      "time": 6.0,
+      "note": "Gb3",
+      "midi": 54,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 2,
+      "measure": 1
+    },
+    {
+      "time": 6.0,
+      "note": "A3",
+      "midi": 57,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 1
+    },
+    {
+      "time": 7.0,
+      "note": "A4",
+      "midi": 69,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 1
+    },
+    {
+      "time": 8.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 2
+    },
+    {
+      "time": 8.0,
+      "note": "G3",
+      "midi": 55,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 2
+    },
+    {
+      "time": 9.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 2
+    },
+    {
+      "time": 10.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 2
+    },
+    {
+      "time": 10.0,
+      "note": "G2",
+      "midi": 43,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 5,
+      "measure": 2
+    },
+    {
+      "time": 11.0,
+      "note": "E4",
+      "midi": 64,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 1,
+      "measure": 2
+    },
+    {
+      "time": 11.5,
+      "note": "D4",
+      "midi": 62,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 3,
+      "measure": 2
+    },
+    {
+      "time": 12.0,
+      "note": "C4",
+      "midi": 60,
+      "duration": 3.0,
+      "hand": "R",
+      "finger": 2,
+      "measure": 3
+    },
+    {
+      "time": 12.0,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 3
+    },
+    {
+      "time": 12.5,
+      "note": "E3",
+      "midi": 52,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 3,
+      "measure": 3
+    },
+    {
+      "time": 13.0,
+      "note": "F3",
+      "midi": 53,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 3
+    },
+    {
+      "time": 13.5,
+      "note": "G3",
+      "midi": 55,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 3
+    },
+    {
+      "time": 14.0,
+      "note": "C3",
+      "midi": 48,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 5,
+      "measure": 3
+    },
+    {
+      "time": 14.0,
+      "note": "E3",
+      "midi": 52,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 3,
+      "measure": 3
+    },
+    {
+      "time": 16.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 4
+    },
+    {
+      "time": 16.0,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 4
+    },
+    {
+      "time": 16.5,
+      "note": "G3",
+      "midi": 55,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 4
+    },
+    {
+      "time": 17.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 4
+    },
+    {
+      "time": 17.5,
+      "note": "G3",
+      "midi": 55,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 4
+    },
+    {
+      "time": 18.0,
+      "note": "E4",
+      "midi": 64,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 1,
+      "measure": 4
+    },
+    {
+      "time": 18.0,
+      "note": "B2",
+      "midi": 47,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 4
+    },
+    {
+      "time": 18.5,
+      "note": "F4",
+      "midi": 65,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 2,
+      "measure": 4
+    },
+    {
+      "time": 18.5,
+      "note": "G3",
+      "midi": 55,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 4
+    },
+    {
+      "time": 19.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 4
+    },
+    {
+      "time": 19.5,
+      "note": "G3",
+      "midi": 55,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 4
+    },
+    {
+      "time": 20.0,
+      "note": "A4",
+      "midi": 69,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 4,
+      "measure": 5
+    },
+    {
+      "time": 20.0,
+      "note": "A2",
+      "midi": 45,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 5
+    },
+    {
+      "time": 20.5,
+      "note": "F3",
+      "midi": 53,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 5
+    },
+    {
+      "time": 21.0,
+      "note": "A4",
+      "midi": 69,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 4,
+      "measure": 5
+    },
+    {
+      "time": 21.5,
+      "note": "F3",
+      "midi": 53,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 5
+    },
+    {
+      "time": 22.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 2.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 5
+    },
+    {
+      "time": 22.0,
+      "note": "G2",
+      "midi": 43,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 5
+    },
+    {
+      "time": 22.5,
+      "note": "E3",
+      "midi": 52,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 5
+    },
+    {
+      "time": 23.5,
+      "note": "E3",
+      "midi": 52,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 5
+    },
+    {
+      "time": 24.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 6
+    },
+    {
+      "time": 24.0,
+      "note": "F2",
+      "midi": 41,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 6
+    },
+    {
+      "time": 24.5,
+      "note": "C3",
+      "midi": 48,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 2,
+      "measure": 6
+    },
+    {
+      "time": 24.5,
+      "note": "E3",
+      "midi": 52,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 6
+    },
+    {
+      "time": 25.0,
+      "note": "C5",
+      "midi": 72,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 6
+    },
+    {
+      "time": 25.5,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 6
+    },
+    {
+      "time": 25.5,
+      "note": "E3",
+      "midi": 52,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 6
+    },
+    {
+      "time": 26.0,
+      "note": "E5",
+      "midi": 76,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 5,
+      "measure": 6
+    },
+    {
+      "time": 26.0,
+      "note": "Gb2",
+      "midi": 42,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 6
+    },
+    {
+      "time": 26.5,
+      "note": "C3",
+      "midi": 48,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 2,
+      "measure": 6
+    },
+    {
+      "time": 26.5,
+      "note": "E3",
+      "midi": 52,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 6
+    },
+    {
+      "time": 27.0,
+      "note": "D5",
+      "midi": 74,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 4,
+      "measure": 6
+    },
+    {
+      "time": 27.5,
+      "note": "C5",
+      "midi": 72,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 3,
+      "measure": 6
+    },
+    {
+      "time": 27.5,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 6
+    },
+    {
+      "time": 27.5,
+      "note": "E3",
+      "midi": 52,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 6
+    },
+    {
+      "time": 28.0,
+      "note": "D5",
+      "midi": 74,
+      "duration": 4.0,
+      "hand": "R",
+      "finger": 4,
+      "measure": 7
+    },
+    {
+      "time": 28.0,
+      "note": "G2",
+      "midi": 43,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 7
+    },
+    {
+      "time": 28.5,
+      "note": "D3",
+      "midi": 50,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 7
+    },
+    {
+      "time": 29.0,
+      "note": "F3",
+      "midi": 53,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 7
+    },
+    {
+      "time": 29.5,
+      "note": "G3",
+      "midi": 55,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 7
+    },
+    {
+      "time": 30.0,
+      "note": "G3",
+      "midi": 55,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 7
+    },
+    {
+      "time": 30.5,
+      "note": "F3",
+      "midi": 53,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 7
+    },
+    {
+      "time": 31.0,
+      "note": "E3",
+      "midi": 52,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 3,
+      "measure": 7
+    },
+    {
+      "time": 31.5,
+      "note": "D3",
+      "midi": 50,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 4,
+      "measure": 7
+    },
+    {
+      "time": 32.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 2.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 8
+    },
+    {
+      "time": 32.0,
+      "note": "E5",
+      "midi": 76,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 5,
+      "measure": 8
+    },
+    {
+      "time": 32.0,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 8
+    },
+    {
+      "time": 32.5,
+      "note": "E3",
+      "midi": 52,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 3,
+      "measure": 8
+    },
+    {
+      "time": 33.0,
+      "note": "E5",
+      "midi": 76,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 5,
+      "measure": 8
+    },
+    {
+      "time": 33.0,
+      "note": "G3",
+      "midi": 55,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 8
+    },
+    {
+      "time": 34.0,
+      "note": "Ab4",
+      "midi": 68,
+      "duration": 2.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 8
+    },
+    {
+      "time": 34.0,
+      "note": "D5",
+      "midi": 74,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 4,
+      "measure": 8
+    },
+    {
+      "time": 34.0,
+      "note": "E3",
+      "midi": 52,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 3,
+      "measure": 8
+    },
+    {
+      "time": 34.0,
+      "note": "Ab3",
+      "midi": 56,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 8
+    },
+    {
+      "time": 35.0,
+      "note": "D5",
+      "midi": 74,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 4,
+      "measure": 8
+    },
+    {
+      "time": 36.0,
+      "note": "A4",
+      "midi": 69,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 9
+    },
+    {
+      "time": 36.0,
+      "note": "C5",
+      "midi": 72,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 9
+    },
+    {
+      "time": 36.0,
+      "note": "A2",
+      "midi": 45,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 9
+    },
+    {
+      "time": 36.5,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 9
+    },
+    {
+      "time": 37.0,
+      "note": "D5",
+      "midi": 74,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 4,
+      "measure": 9
+    },
+    {
+      "time": 37.0,
+      "note": "E3",
+      "midi": 52,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 9
+    },
+    {
+      "time": 37.5,
+      "note": "C5",
+      "midi": 72,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 3,
+      "measure": 9
+    },
+    {
+      "time": 38.0,
+      "note": "A4",
+      "midi": 69,
+      "duration": 2.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 9
+    },
+    {
+      "time": 38.0,
+      "note": "Gb2",
+      "midi": 42,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 5,
+      "measure": 9
+    },
+    {
+      "time": 40.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 10
+    },
+    {
+      "time": 40.0,
+      "note": "G2",
+      "midi": 43,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 10
+    },
+    {
+      "time": 40.5,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 10
+    },
+    {
+      "time": 41.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 10
+    },
+    {
+      "time": 41.0,
+      "note": "D3",
+      "midi": 50,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 10
+    },
+    {
+      "time": 41.5,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 10
+    },
+    {
+      "time": 42.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 10
+    },
+    {
+      "time": 42.0,
+      "note": "G2",
+      "midi": 43,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 5,
+      "measure": 10
+    },
+    {
+      "time": 42.0,
+      "note": "B2",
+      "midi": 47,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 3,
+      "measure": 10
+    },
+    {
+      "time": 43.0,
+      "note": "E4",
+      "midi": 64,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 1,
+      "measure": 10
+    },
+    {
+      "time": 43.5,
+      "note": "D4",
+      "midi": 62,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 3,
+      "measure": 10
+    },
+    {
+      "time": 44.0,
+      "note": "C4",
+      "midi": 60,
+      "duration": 3.0,
+      "hand": "R",
+      "finger": 2,
+      "measure": 11
+    },
+    {
+      "time": 44.0,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 11
+    },
+    {
+      "time": 44.5,
+      "note": "F3",
+      "midi": 53,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 11
+    },
+    {
+      "time": 45.0,
+      "note": "G3",
+      "midi": 55,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 11
+    },
+    {
+      "time": 45.5,
+      "note": "F3",
+      "midi": 53,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 11
+    },
+    {
+      "time": 46.0,
+      "note": "C3",
+      "midi": 48,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 5,
+      "measure": 11
+    },
+    {
+      "time": 46.0,
+      "note": "E3",
+      "midi": 52,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 3,
+      "measure": 11
+    },
+    {
+      "time": 48.0,
+      "note": "D4",
+      "midi": 62,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 2,
+      "measure": 12
+    },
+    {
+      "time": 48.0,
+      "note": "G2",
+      "midi": 43,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 12
+    },
+    {
+      "time": 48.5,
+      "note": "B2",
+      "midi": 47,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 3,
+      "measure": 12
+    },
+    {
+      "time": 49.0,
+      "note": "D4",
+      "midi": 62,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 2,
+      "measure": 12
+    },
+    {
+      "time": 49.0,
+      "note": "D3",
+      "midi": 50,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 12
+    },
+    {
+      "time": 49.5,
+      "note": "B2",
+      "midi": 47,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 3,
+      "measure": 12
+    },
+    {
+      "time": 50.0,
+      "note": "E4",
+      "midi": 64,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 12
+    },
+    {
+      "time": 50.0,
+      "note": "G2",
+      "midi": 43,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 12
+    },
+    {
+      "time": 50.5,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 12
+    },
+    {
+      "time": 51.0,
+      "note": "C4",
+      "midi": 60,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 12
+    },
+    {
+      "time": 51.0,
+      "note": "E3",
+      "midi": 52,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 12
+    },
+    {
+      "time": 51.5,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 12
+    },
+    {
+      "time": 52.0,
+      "note": "D4",
+      "midi": 62,
+      "duration": 2.0,
+      "hand": "R",
+      "finger": 2,
+      "measure": 13
+    },
+    {
+      "time": 52.0,
+      "note": "G2",
+      "midi": 43,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 13
+    },
+    {
+      "time": 52.5,
+      "note": "B2",
+      "midi": 47,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 3,
+      "measure": 13
+    },
+    {
+      "time": 53.0,
+      "note": "D3",
+      "midi": 50,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 13
+    },
+    {
+      "time": 53.5,
+      "note": "B2",
+      "midi": 47,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 3,
+      "measure": 13
+    },
+    {
+      "time": 54.0,
+      "note": "E4",
+      "midi": 64,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 13
+    },
+    {
+      "time": 54.0,
+      "note": "C3",
+      "midi": 48,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 2,
+      "measure": 13
+    },
+    {
+      "time": 55.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 13
+    },
+    {
+      "time": 55.0,
+      "note": "B2",
+      "midi": 47,
+      "duration": 1.0,
+      "hand": "L",
+      "finger": 3,
+      "measure": 13
+    },
+    {
+      "time": 56.0,
+      "note": "A4",
+      "midi": 69,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 14
+    },
+    {
+      "time": 56.0,
+      "note": "A2",
+      "midi": 45,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 14
+    },
+    {
+      "time": 56.5,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 3,
+      "measure": 14
+    },
+    {
+      "time": 57.0,
+      "note": "C5",
+      "midi": 72,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 14
+    },
+    {
+      "time": 57.0,
+      "note": "F3",
+      "midi": 53,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 14
+    },
+    {
+      "time": 57.5,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 3,
+      "measure": 14
+    },
+    {
+      "time": 58.0,
+      "note": "E5",
+      "midi": 76,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 5,
+      "measure": 14
+    },
+    {
+      "time": 58.0,
+      "note": "D3",
+      "midi": 50,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 2,
+      "measure": 14
+    },
+    {
+      "time": 58.0,
+      "note": "Gb3",
+      "midi": 54,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 14
+    },
+    {
+      "time": 59.0,
+      "note": "D5",
+      "midi": 74,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 4,
+      "measure": 14
+    },
+    {
+      "time": 59.5,
+      "note": "C5",
+      "midi": 72,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 3,
+      "measure": 14
+    },
+    {
+      "time": 60.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 2.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 15
+    },
+    {
+      "time": 60.0,
+      "note": "D5",
+      "midi": 74,
+      "duration": 2.0,
+      "hand": "R",
+      "finger": 4,
+      "measure": 15
+    },
+    {
+      "time": 60.0,
+      "note": "G2",
+      "midi": 43,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 15
+    },
+    {
+      "time": 60.5,
+      "note": "D3",
+      "midi": 50,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 15
+    },
+    {
+      "time": 61.0,
+      "note": "F3",
+      "midi": 53,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 15
+    },
+    {
+      "time": 61.5,
+      "note": "G3",
+      "midi": 55,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 15
+    },
+    {
+      "time": 62.0,
+      "note": "G3",
+      "midi": 55,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 15
+    },
+    {
+      "time": 62.5,
+      "note": "B4",
+      "midi": 71,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 2,
+      "measure": 15
+    },
+    {
+      "time": 62.5,
+      "note": "F3",
+      "midi": 53,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 15
+    },
+    {
+      "time": 63.0,
+      "note": "C5",
+      "midi": 72,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 3,
+      "measure": 15
+    },
+    {
+      "time": 63.0,
+      "note": "E3",
+      "midi": 52,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 15
+    },
+    {
+      "time": 63.5,
+      "note": "D5",
+      "midi": 74,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 4,
+      "measure": 15
+    },
+    {
+      "time": 63.5,
+      "note": "D3",
+      "midi": 50,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 3,
+      "measure": 15
+    },
+    {
+      "time": 64.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 2.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 16
+    },
+    {
+      "time": 64.0,
+      "note": "E5",
+      "midi": 76,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 5,
+      "measure": 16
+    },
+    {
+      "time": 64.0,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 16
+    },
+    {
+      "time": 64.5,
+      "note": "E3",
+      "midi": 52,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 3,
+      "measure": 16
+    },
+    {
+      "time": 65.0,
+      "note": "E5",
+      "midi": 76,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 5,
+      "measure": 16
+    },
+    {
+      "time": 65.0,
+      "note": "G3",
+      "midi": 55,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 16
+    },
+    {
+      "time": 65.5,
+      "note": "E3",
+      "midi": 52,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 3,
+      "measure": 16
+    },
+    {
+      "time": 66.0,
+      "note": "Ab4",
+      "midi": 68,
+      "duration": 2.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 16
+    },
+    {
+      "time": 66.0,
+      "note": "D5",
+      "midi": 74,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 4,
+      "measure": 16
+    },
+    {
+      "time": 66.0,
+      "note": "E3",
+      "midi": 52,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 3,
+      "measure": 16
+    },
+    {
+      "time": 66.0,
+      "note": "Ab3",
+      "midi": 56,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 16
+    },
+    {
+      "time": 67.0,
+      "note": "D5",
+      "midi": 74,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 4,
+      "measure": 16
+    },
+    {
+      "time": 68.0,
+      "note": "A4",
+      "midi": 69,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 17
+    },
+    {
+      "time": 68.0,
+      "note": "C5",
+      "midi": 72,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 17
+    },
+    {
+      "time": 68.0,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 17
+    },
+    {
+      "time": 68.5,
+      "note": "F3",
+      "midi": 53,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 17
+    },
+    {
+      "time": 69.0,
+      "note": "D5",
+      "midi": 74,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 4,
+      "measure": 17
+    },
+    {
+      "time": 69.0,
+      "note": "A3",
+      "midi": 57,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 17
+    },
+    {
+      "time": 69.5,
+      "note": "C5",
+      "midi": 72,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 3,
+      "measure": 17
+    },
+    {
+      "time": 69.5,
+      "note": "F3",
+      "midi": 53,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 17
+    },
+    {
+      "time": 70.0,
+      "note": "A4",
+      "midi": 69,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 17
+    },
+    {
+      "time": 70.0,
+      "note": "Gb3",
+      "midi": 54,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 2,
+      "measure": 17
+    },
+    {
+      "time": 70.0,
+      "note": "A3",
+      "midi": 57,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 17
+    },
+    {
+      "time": 71.0,
+      "note": "A4",
+      "midi": 69,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 1,
+      "measure": 17
+    },
+    {
+      "time": 72.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 18
+    },
+    {
+      "time": 72.0,
+      "note": "G3",
+      "midi": 55,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 1,
+      "measure": 18
+    },
+    {
+      "time": 73.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 18
+    },
+    {
+      "time": 74.0,
+      "note": "G4",
+      "midi": 67,
+      "duration": 1.0,
+      "hand": "R",
+      "finger": 3,
+      "measure": 18
+    },
+    {
+      "time": 74.0,
+      "note": "G2",
+      "midi": 43,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 5,
+      "measure": 18
+    },
+    {
+      "time": 75.0,
+      "note": "E4",
+      "midi": 64,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 1,
+      "measure": 18
+    },
+    {
+      "time": 75.5,
+      "note": "D4",
+      "midi": 62,
+      "duration": 0.5,
+      "hand": "R",
+      "finger": 3,
+      "measure": 18
+    },
+    {
+      "time": 76.0,
+      "note": "C4",
+      "midi": 60,
+      "duration": 4.0,
+      "hand": "R",
+      "finger": 2,
+      "measure": 19
+    },
+    {
+      "time": 76.0,
+      "note": "C3",
+      "midi": 48,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 5,
+      "measure": 19
+    },
+    {
+      "time": 76.5,
+      "note": "F3",
+      "midi": 53,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 3,
+      "measure": 19
+    },
+    {
+      "time": 77.0,
+      "note": "G3",
+      "midi": 55,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 1,
+      "measure": 19
+    },
+    {
+      "time": 77.5,
+      "note": "F3",
+      "midi": 53,
+      "duration": 0.5,
+      "hand": "L",
+      "finger": 2,
+      "measure": 19
+    },
+    {
+      "time": 78.0,
+      "note": "C3",
+      "midi": 48,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 5,
+      "measure": 19
+    },
+    {
+      "time": 78.0,
+      "note": "E3",
+      "midi": 52,
+      "duration": 2.0,
+      "hand": "L",
+      "finger": 3,
+      "measure": 19
+    }
+  ]
+}
