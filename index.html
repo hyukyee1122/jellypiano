@@ -1,0 +1,912 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/layout/basic/js/main.js)-->
+<!--@css(/layout/basic/css/main.css)-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>젤리피아노 — 보고 따라치는 피아노</title>
+<link rel="stylesheet" href="css/style.css?v=152">
+<!-- 실제 피아노 샘플(SoundFont) 재생용 — 전역 Soundfont 제공. game.js보다 먼저 로드 -->
+<script src="https://cdn.jsdelivr.net/npm/soundfont-player@0.12.0/dist/soundfont-player.min.js"></script>
+<!-- WebGL 노트 렌더링용 PIXI — 전역 PIXI 제공. (미로드 시 game.js가 2D로 자동 폴백) -->
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@8.4.0/dist/pixi.min.js"></script>
+<style>
+/* ============== 폰트 & 변수 ============== */
+html, body { margin: 0; padding: 0; }
+body {
+    background: #FFFBF5 !important;
+}
+#wrap,
+#container,
+#contents {
+    max-width: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    background: #FFFBF5 !important;
+}
+#wrap {
+    overflow-x: hidden !important;
+}
+#container > div,
+#contents > div,
+#contents > section,
+.xans-layout-mobileaction {
+    max-width: none !important;
+}
+#header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+#container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+#contents {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+#footer,
+#footer.layout1 {
+    margin-top: 0 !important;
+}
+.xans-layout-mobileaction {
+    display: none !important;
+}
+.jp-page {
+    --jp-bg: #FFFBF5;
+    --jp-bg-soft: #FFF4E6;
+    --jp-ink: #1A1A1A;
+    --jp-ink-soft: #555;
+    --jp-ink-mute: #888;
+    --jp-line: #E8DFD0;
+    --jp-accent: #FF6B35;
+    --jp-accent-2: #FFB400;
+    --jp-pink: #FF4D8D;
+    --jp-green: #2ECC71;
+    --jp-blue: #2D7EF7;
+    --jp-purple: #9B59B6;
+
+    font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    color: var(--jp-ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    background: var(--jp-bg);
+}
+.jp-page * { box-sizing: border-box; }
+.jp-container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* ============== 공통 섹션 ============== */
+.jp-section { padding: 120px 0; position: relative; }
+.jp-section + .jp-section { border-top: 1px solid var(--jp-line); }
+.jp-eyebrow {
+    display: inline-block; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.25em; color: var(--jp-accent); margin-bottom: 24px; text-transform: uppercase;
+}
+.jp-h2 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 24px; }
+.jp-sub { font-size: clamp(16px, 1.6vw, 19px); color: var(--jp-ink-soft); max-width: 640px; margin: 0 auto 64px; }
+.jp-section-center { text-align: center; }
+
+/* ============== 1. 히어로 ============== */
+.jp-hero {
+    padding: 80px 0 120px; text-align: center;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255, 180, 0, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 107, 53, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(46, 204, 113, 0.10) 0%, transparent 60%),
+        var(--jp-bg);
+    overflow: hidden; position: relative;
+}
+.jp-hero-tag {
+    display: inline-block; font-size: clamp(18px, 2.4vw, 26px); font-weight: 700;
+    color: var(--jp-accent); background: rgba(255, 107, 53, 0.1);
+    padding: 18px 36px; border-radius: 24px; margin-bottom: 40px; line-height: 1.5; text-align: center;
+    opacity: 0; animation: jpFadeIn 0.8s ease 0.2s forwards;
+}
+.jp-hero-title {
+    font-size: clamp(40px, 8vw, 88px); font-weight: 900; line-height: 1.05; letter-spacing: -0.04em;
+    margin: 0 0 32px; opacity: 0; animation: jpFadeIn 0.8s ease 0.4s forwards;
+}
+.jp-hero-title .jp-accent { color: var(--jp-accent); }
+.jp-hero-title .jp-num {
+    display: inline-block; background: linear-gradient(180deg, var(--jp-accent) 0%, var(--jp-pink) 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.jp-hero-desc {
+    font-size: clamp(16px, 2vw, 20px); color: var(--jp-ink-soft); max-width: 520px; margin: 0 auto 48px;
+    opacity: 0; animation: jpFadeIn 0.8s ease 0.6s forwards;
+}
+.jp-cta-group {
+    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+    opacity: 0; animation: jpFadeIn 0.8s ease 0.8s forwards;
+}
+.jp-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 18px 36px; font-size: 16px; font-weight: 700; border-radius: 100px; border: none;
+    cursor: pointer; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease; font-family: inherit;
+}
+.jp-btn-primary { background: var(--jp-ink); color: white; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); }
+.jp-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25); color: white; }
+.jp-btn-ghost { background: transparent; color: var(--jp-ink); border: 2px solid var(--jp-ink); }
+.jp-btn-ghost:hover { background: var(--jp-ink); color: white; }
+
+.jp-floating-notes { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.jp-note { position: absolute; border-radius: 14px; opacity: 0.7; animation: jpFloat 8s ease-in-out infinite; }
+.jp-note-1 { top: 15%; left: 8%;  width: 28px; height: 80px; background: var(--jp-accent);    animation-delay: 0s; }
+.jp-note-2 { top: 30%; right: 12%; width: 28px; height: 60px; background: var(--jp-accent-2); animation-delay: 1.5s; }
+.jp-note-3 { bottom: 25%; left: 15%; width: 28px; height: 70px; background: var(--jp-green);  animation-delay: 3s; }
+.jp-note-4 { bottom: 18%; right: 8%; width: 28px; height: 50px; background: var(--jp-blue);   animation-delay: 4.5s; }
+.jp-note-5 { top: 50%; left: 5%;   width: 28px; height: 45px; background: var(--jp-purple);   animation-delay: 6s; }
+.jp-note-6 { top: 60%; right: 5%;  width: 28px; height: 65px; background: var(--jp-pink);     animation-delay: 2s; }
+
+/* ============== 2. 문제 제기 ============== */
+.jp-problem { background: var(--jp-bg-soft); text-align: center; }
+.jp-problem-list { list-style: none; padding: 0; margin: 48px auto 56px; max-width: 520px; }
+.jp-problem-list li { font-size: clamp(18px, 2.4vw, 22px); color: var(--jp-ink-soft); padding: 14px 0; font-weight: 500; }
+.jp-twist {
+    font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; letter-spacing: -0.02em; color: var(--jp-ink);
+    background: linear-gradient(180deg, transparent 60%, var(--jp-accent-2) 60%); display: inline; padding: 0 4px; line-height: 1.4;
+}
+
+/* ============== 3 & 4. 카드 ============== */
+.jp-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; align-items: stretch; }
+.jp-card {
+    background: white; border: 1px solid var(--jp-line); border-radius: 24px; padding: 40px 32px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; display: flex; flex-direction: column;
+}
+.jp-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); }
+.jp-card-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 24px; }
+.jp-card-1 .jp-card-icon { background: rgba(255, 107, 53, 0.12); }
+.jp-card-2 .jp-card-icon { background: rgba(255, 180, 0, 0.18); }
+.jp-card-3 .jp-card-icon { background: rgba(46, 204, 113, 0.15); }
+.jp-card h3 { font-size: 20px; font-weight: 800; margin: 0 0 12px; letter-spacing: -0.01em; }
+.jp-card p { font-size: 15px; color: var(--jp-ink-soft); line-height: 1.65; margin: 0; text-align: left; }
+.jp-card-extra { margin-top: 16px !important; padding-top: 16px; border-top: 1px dashed var(--jp-line); font-size: 14px !important; color: var(--jp-ink-mute) !important; }
+.jp-tools .jp-card-1 .jp-card-icon { background: rgba(45, 126, 247, 0.12); }
+.jp-tools .jp-card-2 .jp-card-icon { background: rgba(155, 89, 182, 0.12); }
+.jp-tools .jp-card-3 .jp-card-icon { background: rgba(255, 77, 141, 0.12); }
+
+/* ============== 5. 사용법 ============== */
+.jp-howto { background: var(--jp-ink); color: white; }
+.jp-howto .jp-eyebrow { color: var(--jp-accent-2); }
+.jp-howto .jp-h2 { color: white; }
+.jp-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; margin-bottom: 48px; }
+.jp-step { text-align: left; position: relative; padding-top: 24px; }
+.jp-step-num { font-size: 80px; font-weight: 900; line-height: 1; color: var(--jp-accent-2); letter-spacing: -0.05em; margin-bottom: 16px; font-family: Georgia, serif; font-style: italic; }
+.jp-step h3 { font-size: 22px; font-weight: 800; margin: 0 0 12px; color: white; }
+.jp-step p { font-size: 15px; color: rgba(255, 255, 255, 0.7); line-height: 1.65; margin: 0; }
+.jp-howto-footer { text-align: center; margin-top: 56px; font-size: 18px; font-weight: 600; color: var(--jp-accent-2); }
+
+/* ============== 6. FAQ ============== */
+.jp-faq { background: var(--jp-bg); }
+.jp-faq-list { max-width: 720px; margin: 56px auto 0; }
+.jp-faq-item { border-bottom: 1px solid var(--jp-line); padding: 28px 0; }
+.jp-faq-item:first-child { border-top: 1px solid var(--jp-line); }
+.jp-faq-q { font-size: 18px; font-weight: 700; margin: 0 0 12px; color: var(--jp-ink); display: flex; align-items: center; gap: 12px; }
+.jp-faq-q::before { content: 'Q'; flex-shrink: 0; width: 28px; height: 28px; background: var(--jp-accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; }
+.jp-faq-a { font-size: 16px; color: var(--jp-ink-soft); margin: 0; padding-left: 40px; line-height: 1.7; }
+
+/* ============== 7. 클로징 ============== */
+.jp-closing { background: linear-gradient(135deg, var(--jp-accent) 0%, var(--jp-pink) 100%); color: white; text-align: center; padding: 100px 0; }
+.jp-closing h2 { font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin: 0 0 16px; letter-spacing: -0.02em; }
+.jp-closing p { font-size: 18px; opacity: 0.9; margin: 0 0 40px; }
+.jp-closing .jp-btn-primary { background: white; color: var(--jp-accent); }
+.jp-closing .jp-btn-primary:hover { background: var(--jp-ink); color: white; }
+
+/* ============== 애니메이션 ============== */
+@keyframes jpFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes jpFloat { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-30px) rotate(3deg); } }
+
+/* ============== 모바일 ============== */
+@media (max-width: 768px) {
+    .jp-section { padding: 72px 0; }
+    .jp-hero    { padding: 48px 0 80px; }
+    .jp-cards, .jp-steps { grid-template-columns: 1fr; gap: 16px; }
+    .jp-card { padding: 32px 24px; }
+    .jp-cta-group { flex-direction: column; align-items: stretch; padding: 0 24px; }
+    .jp-btn { width: 100%; }
+    .jp-note-1, .jp-note-2, .jp-note-3, .jp-note-4, .jp-note-5, .jp-note-6 { width: 20px; height: 50px; }
+    .jp-step-num { font-size: 64px; }
+}
+
+/* ============== 게임 모달 (전체 화면 오버레이) ============== */
+#jellypiano-game {
+    --sidebar-width: 280px;
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw; height: 100vh; margin: 0; padding: 0; z-index: 99999; background: #000;
+}
+#jellypiano-game #game-modal,
+#jellypiano-game #game-inner-container {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%; height: 100%; margin: 0; padding: 0; box-sizing: border-box;
+}
+
+/* ===== 왼쪽 컨트롤 사이드바 ===== */
+#jellypiano-game #sidebar {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: var(--sidebar-width); box-sizing: border-box;
+    display: flex; flex-direction: column; gap: 14px;
+    padding: 16px 14px;
+    background: rgba(10, 16, 30, 0.6);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 60; overflow-y: auto;
+}
+#jellypiano-game #sidebar .sidebar-keep,
+#jellypiano-game #sidebar .sidebar-drawer { display: flex; flex-direction: column; gap: 12px; }
+#jellypiano-game #sidebar .group-left { display: flex; flex-direction: column; gap: 10px; }
+#jellypiano-game #sidebar .group-right { display: flex; }
+#jellypiano-game #sidebar #btn-play,
+#jellypiano-game #sidebar #btn-stop,
+#jellypiano-game #sidebar .song-select-tablet,
+#jellypiano-game #sidebar #btn-song-select-tablet { width: 100%; }
+#jellypiano-game #sidebar .control-group.legend {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+}
+#jellypiano-game #sidebar .control-group.legend > div {
+    width: 100%;
+    justify-content: center;
+}
+/* 사이드바 안의 컨트롤은 세로로 꽉 차게 + 라벨/텍스트 왼쪽 정렬로 통일 */
+#jellypiano-game #sidebar .control-group { width: 100%; box-sizing: border-box; justify-content: flex-start; height: auto; gap: 8px; }
+#jellypiano-game #sidebar .control-group > label:first-child { flex: 0 0 52px; text-align: left; }
+#jellypiano-game #sidebar select { flex: 1 1 auto; max-width: none; }
+/* 속도/확대 행: [라벨][－][값][＋] 를 한 덩어리로 (값을 고정폭으로 모음) */
+#jellypiano-game #sidebar .cg-speed,
+#jellypiano-game #sidebar .cg-zoom {
+    display: grid;
+    grid-template-columns: 52px 42px minmax(48px, 1fr) 42px;
+    align-items: center;
+    column-gap: 10px;
+}
+#jellypiano-game #sidebar #txt-speed,
+#jellypiano-game #sidebar #float-zoom-level {
+    width: auto; min-width: 48px; text-align: center; font-variant-numeric: tabular-nums;
+}
+/* 속도/확대 +/- 버튼: 동일 정사각형 + 글자 가운데 정렬 (텍스트 치우침 방지) */
+#jellypiano-game #sidebar .cg-speed .zoom-btn,
+#jellypiano-game #sidebar .cg-zoom .zoom-btn {
+    width: 42px; height: 42px; min-width: 0; padding: 0;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 18px; line-height: 1;
+}
+#jellypiano-game #sidebar #btn-play,
+#jellypiano-game #sidebar #btn-stop,
+#jellypiano-game #sidebar #btn-back-home,
+#jellypiano-game #sidebar .song-select-tablet,
+#jellypiano-game #sidebar #btn-song-select-tablet { width: 100%; text-align: center; }
+/* 손선택 체크박스는 라벨 고정폭 제외 (체크박스 라벨이라) */
+#jellypiano-game #sidebar .cg-hands > label:first-child { flex: 0 0 auto; }
+/* 햄버거: 데스크탑에서는 숨김 */
+#jellypiano-game #btn-hamburger {
+    display: none; font-size: 20px; line-height: 1; padding: 6px 12px;
+    background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 8px; cursor: pointer;
+}
+
+@media (min-width: 769px) {
+    /* 사이드바 폭만큼 콘텐츠를 오른쪽으로 밀기 */
+    #jellypiano-game #game-inner-container { padding-left: var(--sidebar-width); }
+    /* 플레이 화면을 '사이드바 오른쪽 영역' 가운데로 */
+    #jellypiano-game #game-wrapper {
+        position: absolute !important; top: 0 !important; bottom: 0 !important;
+        left: calc(50% + (var(--sidebar-width) / 2)) !important; transform: translateX(-50%);
+        width: auto !important; aspect-ratio: 14/16 !important;
+        max-height: 100vh !important; max-width: calc(100vw - var(--sidebar-width)) !important;
+    }
+    #jellypiano-game #bottom-panel {
+        position: absolute;
+        top: 0;
+        left: calc(50% + (var(--sidebar-width) / 2));
+        transform: translateX(-50%);
+        width: min(87.5vh, calc(100vw - var(--sidebar-width)));
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #jellypiano-game { background: #111 !important; }
+}
+
+@media (max-width: 768px) {
+    /* 사이드바 = 전체폭 파란 상단바(keep) + 햄버거로 여닫는 드로어(drawer) */
+    #jellypiano-game #game-inner-container { padding-left: 0; }
+    #jellypiano-game #sidebar {
+        position: fixed; left: 0; right: 0; top: 0; bottom: auto; width: 100%;
+        min-height: 48px;
+        flex-direction: row; align-items: center; flex-wrap: nowrap; gap: 8px;
+        padding: 6px 8px; box-sizing: border-box;
+        background: rgba(20, 55, 90, 0.95);            /* 파란 상단바 */
+        border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12);
+        backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        overflow: visible; z-index: 70;
+    }
+    /* keep: 모든 요소를 한 줄에 수직 가운데 정렬, 줄바꿈 없음 */
+    #jellypiano-game #sidebar .sidebar-keep {
+        flex-direction: row; align-items: center; flex-wrap: nowrap; gap: 8px; flex: 1 1 auto; width: 100%; min-width: 0;
+    }
+    #jellypiano-game #sidebar .group-left { flex-direction: row; align-items: center; gap: 6px; flex: 0 0 auto; }
+    /* keep 안의 컨트롤은 가로폭 자동, 속도 라벨은 폭 절약 위해 숨김 */
+    #jellypiano-game #sidebar .sidebar-keep .control-group { width: auto; height: auto; flex: 0 1 auto; min-width: 0; }
+    #jellypiano-game #sidebar .sidebar-keep .cg-speed > label { display: none; }
+    #jellypiano-game #sidebar .sidebar-keep .cg-speed {
+        grid-template-columns: 30px minmax(34px, auto) 30px;
+        column-gap: 5px;
+    }
+    #jellypiano-game #sidebar .sidebar-keep #btn-play,
+    #jellypiano-game #sidebar .sidebar-keep #btn-stop { width: auto; }
+    /* 모바일 상단바 버튼 컴팩트 */
+    #jellypiano-game #sidebar .sidebar-keep button:not(.zoom-btn) { padding: 6px 10px; font-size: 13px; }
+    #jellypiano-game #sidebar .sidebar-keep .zoom-btn { width: 30px; height: 30px; font-size: 16px; }
+    #jellypiano-game #btn-hamburger { display: block; flex: 0 0 auto; }
+    /* drawer: 왼쪽에서 슬라이드되는 패널 (기본 숨김) */
+    #jellypiano-game #sidebar .sidebar-drawer {
+        position: fixed; left: 0; top: 0; bottom: 0; width: 72vw; max-width: 300px;
+        background: rgba(10, 16, 30, 0.96);
+        backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+        padding: 60px 18px 20px; gap: 18px; box-sizing: border-box;
+        transform: translateX(-100%); transition: transform 0.25s ease;
+        z-index: 100; overflow-y: auto;
+        border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    #jellypiano-game #sidebar .sidebar-drawer .song-select-tablet,
+    #jellypiano-game #sidebar .sidebar-drawer #btn-song-select-tablet { width: 100%; }
+    #jellypiano-game.sidebar-open #sidebar .sidebar-drawer { transform: translateX(0); }
+    /* 드로어 열렸을 때 배경 딤(클릭하면 닫힘은 JS) */
+    #jellypiano-game.sidebar-open::after {
+        content: ''; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 90;
+    }
+}
+
+@media (max-width: 768px) {
+    #jellypiano-game #game-inner-container {
+        padding-left: 0 !important;
+        padding-top: 56px !important;
+    }
+
+    #jellypiano-game #sidebar {
+        position: fixed;
+        inset: 0 0 auto 0;
+        width: 100vw;
+        height: 56px;
+        min-height: 56px;
+        display: block;
+        padding: 8px;
+        overflow: visible;
+        z-index: 100;
+    }
+
+    #jellypiano-game #sidebar .sidebar-keep {
+        display: grid;
+        grid-template-columns: 36px minmax(0, 1fr) 104px;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        height: 40px;
+        min-width: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    #jellypiano-game #btn-hamburger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        min-width: 0;
+    }
+
+    #jellypiano-game #sidebar .sidebar-keep .group-left {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 6px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    #jellypiano-game #sidebar .sidebar-keep #btn-play,
+    #jellypiano-game #sidebar .sidebar-keep #btn-stop {
+        width: 100%;
+        min-width: 0;
+        height: 36px;
+        padding: 0 6px;
+        font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #jellypiano-game #sidebar .sidebar-keep .cg-speed {
+        width: 104px;
+        min-width: 104px;
+        height: 36px;
+        display: grid;
+        grid-template-columns: 28px 40px 28px;
+        gap: 4px;
+        align-items: center;
+        padding: 3px;
+    }
+
+    #jellypiano-game #sidebar .sidebar-keep .cg-speed > label {
+        display: none;
+    }
+
+    #jellypiano-game #sidebar .sidebar-keep #txt-speed {
+        width: 40px;
+        min-width: 0;
+        font-size: 11px;
+        text-align: center;
+    }
+
+    #jellypiano-game #sidebar .sidebar-keep .zoom-btn {
+        width: 28px;
+        height: 28px;
+        min-width: 0;
+        padding: 0;
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    #jellypiano-game #sidebar .sidebar-drawer {
+        top: 56px;
+        bottom: 0;
+        height: calc(100dvh - 56px);
+        width: min(320px, 88vw);
+        max-width: none;
+        padding: 16px 18px 20px;
+        z-index: 1;
+        transform: translateX(calc(-100% - 16px));
+    }
+
+    #jellypiano-game.sidebar-open #sidebar .sidebar-drawer {
+        transform: translateX(0);
+    }
+
+    #jellypiano-game #sidebar .sidebar-drawer .song-select-tablet { order: 1; }
+    #jellypiano-game #sidebar .sidebar-drawer .cg-hands { order: 2; }
+    #jellypiano-game #sidebar .sidebar-drawer .cg-section { order: 3; }
+    #jellypiano-game #sidebar .sidebar-drawer .cg-repeat { order: 4; }
+    #jellypiano-game #sidebar .sidebar-drawer .cg-zoom { order: 5; }
+    #jellypiano-game #sidebar .sidebar-drawer .cg-metronome { order: 6; }
+    #jellypiano-game #sidebar .sidebar-drawer .group-right {
+        order: 7;
+        width: 100%;
+        display: block;
+        margin-top: auto;
+    }
+    #jellypiano-game #sidebar .sidebar-drawer #btn-back-home { order: 8; }
+
+    #jellypiano-game #sidebar .sidebar-drawer .control-group.legend {
+        display: grid !important;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        width: 100%;
+        gap: 8px;
+        padding: 12px 10px;
+        font-size: 12px;
+        align-items: center;
+        justify-items: center;
+        flex-wrap: nowrap;
+    }
+    #jellypiano-game #sidebar .sidebar-drawer .control-group.legend > div {
+        width: 100%;
+        justify-content: center;
+        gap: 4px;
+        padding: 0;
+    }
+    #jellypiano-game #sidebar .sidebar-drawer .control-group.legend .legend-stack {
+        display: flex !important;
+        font-size: 12px;
+        line-height: 1.1;
+    }
+    #jellypiano-game #sidebar .sidebar-drawer .control-group.legend .dot {
+        width: 12px;
+        height: 12px;
+        margin-right: 2px;
+    }
+}
+
+#jellypiano-game #btn-fullscreen {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 130;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: rgba(15, 27, 46, 0.78);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 8px;
+    font-size: 20px;
+    line-height: 1;
+}
+
+#jellypiano-game #sidebar .cg-metronome {
+    display: grid;
+    grid-template-columns: 72px 54px minmax(0, 1fr);
+    align-items: center;
+}
+
+#jellypiano-game #btn-metronome {
+    width: 54px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#jellypiano-game #btn-metronome.active {
+    background: linear-gradient(135deg, #00d2ff 0%, #2ecc71 100%);
+    color: #00131c;
+}
+
+#jellypiano-game #txt-metronome {
+    text-align: center;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    #jellypiano-game #btn-fullscreen {
+        top: 64px;
+        right: 10px;
+        width: 34px;
+        height: 34px;
+        font-size: 17px;
+    }
+    #jellypiano-game #sidebar .cg-metronome {
+        grid-template-columns: 72px 54px minmax(0, 1fr);
+    }
+}
+</style>
+</head>
+<body>
+<div data-ez-module="user-defined/1" data-ez-name="USER DEFINED" data-ez-type="plain" data-ez="contents-16vld4p-1">
+
+<!-- ============================================================
+  메인 랜딩 페이지
+============================================================ -->
+<div class="jp-page">
+
+    <!-- 1. 히어로 -->
+    <section class="jp-hero">
+        <div class="jp-floating-notes">
+            <span class="jp-note jp-note-1"></span>
+            <span class="jp-note jp-note-2"></span>
+            <span class="jp-note jp-note-3"></span>
+            <span class="jp-note jp-note-4"></span>
+            <span class="jp-note jp-note-5"></span>
+            <span class="jp-note jp-note-6"></span>
+        </div>
+        <div class="jp-container">
+            <span class="jp-hero-tag">🎵 악보 없이, 게임처럼<br>보고 따라치는 젤리피아노</span>
+            <h1 class="jp-hero-title">
+                음은 <span class="jp-num">12개</span>뿐.<br>
+                보고 따라 치면 된다.
+            </h1>
+            <p class="jp-hero-desc">
+                색깔 막대가 떨어집니다.<br>
+                닿으면 누르세요. 그게 전부입니다.
+            </p>
+            <div class="jp-cta-group">
+                <a href="javascript:void(0)" class="jp-btn jp-btn-primary" onclick="launchGame()">🎹 지금 시작하기</a>
+                <a href="#jp-howto" class="jp-btn jp-btn-ghost">📖 어떻게 작동하나요</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 문제 제기 -->
+    <section class="jp-section jp-problem">
+        <div class="jp-container">
+            <h2 class="jp-h2">피아노, 왜 다들 포기할까요?</h2>
+            <ul class="jp-problem-list">
+                <li>악보를 배워야 합니다.</li>
+                <li>반음과 온음, 장조와 단조를 외워야 합니다.</li>
+                <li>그러다 지쳐서 그만둡니다.</li>
+            </ul>
+            <p class="jp-twist">사실 피아노 음은 12개뿐입니다.</p>
+        </div>
+    </section>
+
+    <!-- 3. 해법 -->
+    <section class="jp-section jp-section-center" id="jp-features">
+        <div class="jp-container">
+            <span class="jp-eyebrow">THE ANSWER</span>
+            <h2 class="jp-h2">보고, 따라 치면 됩니다.</h2>
+            <p class="jp-sub">젤리피아노가 알려주는 세 가지</p>
+            <div class="jp-cards">
+                <div class="jp-card jp-card-1">
+                    <div class="jp-card-icon">🎨</div>
+                    <h3>색과 번호, 이중으로 알려줍니다</h3>
+                    <p>막대 위에 손가락 번호(1~5)가 적혀 있고, 색깔도 손가락마다 달라요. 왼손과 오른손도 모양으로 구분됩니다.</p>
+                    <p class="jp-card-extra">악보를 봐도 "이 음을 어느 손가락으로 칠지" 헷갈리는 게 피아노 학습의 가장 큰 걸림돌이에요. 색과 숫자 이중 표기로 그 문제를 해결했습니다.</p>
+                </div>
+                <div class="jp-card jp-card-2">
+                    <div class="jp-card-icon">🎹</div>
+                    <h3>위치가 건반을 알려줍니다</h3>
+                    <p>막대가 떨어지는 자리. 그게 누를 건반입니다.</p>
+                </div>
+                <div class="jp-card jp-card-3">
+                    <div class="jp-card-icon">🔤</div>
+                    <h3>글자가 음이름을 알려줍니다</h3>
+                    <p>C, D, E… 막대 위에 적혀 있습니다. 외울 필요 없어요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 연습 도구 -->
+    <section class="jp-section jp-section-center jp-tools">
+        <div class="jp-container">
+            <h2 class="jp-h2">못 따라가도 괜찮습니다.</h2>
+            <p class="jp-sub">느리게, 한 손씩, 짧게 끊어서 — 내 속도로.</p>
+            <div class="jp-cards">
+                <div class="jp-card jp-card-1">
+                    <div class="jp-card-icon">🐢</div>
+                    <h3>0.1배속까지 느리게</h3>
+                    <p>초보자도 쫓아갈 수 있는 속도가 있습니다.</p>
+                </div>
+                <div class="jp-card jp-card-2">
+                    <div class="jp-card-icon">✋</div>
+                    <h3>한 손만 먼저</h3>
+                    <p>오른손만, 왼손만. 따로 익히고 합치세요.</p>
+                </div>
+                <div class="jp-card jp-card-3">
+                    <div class="jp-card-icon">🔁</div>
+                    <h3>한 구간만 5번</h3>
+                    <p>어려운 마디만 골라서 반복 연습합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 사용법 -->
+    <section class="jp-section jp-section-center jp-howto" id="jp-howto">
+        <div class="jp-container">
+            <span class="jp-eyebrow">HOW IT WORKS</span>
+            <h2 class="jp-h2">3단계면 충분합니다.</h2>
+            <div class="jp-steps">
+                <div class="jp-step">
+                    <div class="jp-step-num">01</div>
+                    <h3>곡 선택</h3>
+                    <p>오른손만, 0.1배속, 1구간 반복으로 시작하세요.</p>
+                </div>
+                <div class="jp-step">
+                    <div class="jp-step-num">02</div>
+                    <h3>막대가 떨어집니다</h3>
+                    <p>색·번호·음이름이 보입니다.</p>
+                </div>
+                <div class="jp-step">
+                    <div class="jp-step-num">03</div>
+                    <h3>닿으면 누르세요</h3>
+                    <p>그게 끝입니다.</p>
+                </div>
+            </div>
+            <p class="jp-howto-footer">짧은 시간에 한 곡을 마칠 수 있습니다.</p>
+        </div>
+    </section>
+
+    <!-- 6. FAQ -->
+    <section class="jp-section jp-section-center jp-faq" id="jp-faq">
+        <div class="jp-container">
+            <span class="jp-eyebrow">FAQ</span>
+            <h2 class="jp-h2">자주 묻는 질문</h2>
+            <div class="jp-faq-list">
+                <div class="jp-faq-item">
+                    <p class="jp-faq-q">악보를 못 읽어도 되나요?</p>
+                    <p class="jp-faq-a">네. 색·번호·음이름만 보고 따라 치면 됩니다.</p>
+                </div>
+                <div class="jp-faq-item">
+                    <p class="jp-faq-q">이걸로 진짜 피아노를 배울 수 있나요?</p>
+                    <p class="jp-faq-a">건반 위치, 양손 협응, 리듬감 — 피아노의 기초 감각이 자연스럽게 익혀집니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. 클로징 -->
+    <section class="jp-closing">
+        <div class="jp-container">
+            <h2>이제 누구나 칠 수 있습니다.</h2>
+            <p>가입 없이 바로 시작합니다.</p>
+            <a href="javascript:void(0)" class="jp-btn jp-btn-primary" onclick="launchGame()">🎹 젤리피아노 시작하기</a>
+        </div>
+    </section>
+
+</div>
+<!-- /jp-page -->
+
+
+<!-- ============================================================
+  게임 모달 (기본 숨김 — launchGame() 시 표시)
+  런처 cO() 마크업과 동일 구조
+============================================================ -->
+<div id="jellypiano-game">
+  <div id="game-modal">
+    <div id="game-inner-container">
+      <!-- 왼쪽 사이드바: 상단바 컨트롤(재생/재설정/곡선택/범례). 재생 중에도 유지.
+           sidebar-keep = 항상 노출(모바일 포함), sidebar-drawer = 모바일에서 햄버거로 접힘 -->
+      <div id="sidebar">
+        <!-- keep = 항상 노출 (데스크탑+모바일): 재생 · 재설정 · 속도 -->
+        <div class="sidebar-keep">
+          <!-- 햄버거 (사이드바 토글) — 데스크탑에서는 CSS로 숨김 -->
+          <button id="btn-hamburger" type="button" aria-label="메뉴">☰</button>
+          <div class="group-left">
+            <button id="btn-play">▶ 재생</button>
+          </div>
+          <div class="control-group cg-speed">
+            <label>속도:</label>
+            <button class="zoom-btn" id="btn-speed-down" title="느리게">－</button>
+            <span id="txt-speed">1.0x</span>
+            <button class="zoom-btn" id="btn-speed-up" title="빠르게">＋</button>
+          </div>
+        </div>
+        <!-- drawer = 데스크탑 노출 / 모바일은 햄버거로 접힘: 곡선택 · 손선택 · 구간 · 반복 · 범례 · 홈 -->
+        <div class="sidebar-drawer">
+          <div class="control-group song-select-tablet">
+            <button id="btn-song-select-tablet">곡 선택</button>
+            <span id="song-name-display"></span>
+          </div>
+          <div class="control-group cg-hands">
+            <label><input type="checkbox" id="chk-right" checked> 오른손</label>
+            <label><input type="checkbox" id="chk-left" checked> 왼손</label>
+          </div>
+          <div class="control-group cg-section">
+            <label>구간:</label>
+            <select id="sel-section"><option value="-1">전곡</option></select>
+          </div>
+          <div class="control-group cg-repeat">
+            <label>반복:</label>
+            <select id="sel-repeat">
+              <option value="1">1회</option>
+              <option value="2">2회</option>
+              <option value="3">3회</option>
+              <option value="4">4회</option>
+              <option value="5">5회</option>
+            </select>
+          </div>
+          <div class="control-group cg-zoom">
+            <label>확대:</label>
+            <button class="zoom-btn" id="float-zoom-out" title="축소">－</button>
+            <span id="float-zoom-level" title="클릭시 자동 맞춤">100%</span>
+            <button class="zoom-btn" id="float-zoom-in" title="확대">＋</button>
+          </div>
+          <div class="control-group cg-metronome">
+            <label>메트로놈:</label>
+            <button id="btn-metronome" type="button" aria-pressed="false">OFF</button>
+            <span id="txt-metronome">120 BPM</span>
+          </div>
+          <div class="group-right">
+            <div class="control-group legend">
+              <div title="L5 / R1"><span class="dot"></span><span class="legend-stack"><span class="legend-l">L5</span><span class="legend-line"></span><span class="legend-r">R1</span></span></div>
+              <div title="L4 / R2"><span class="dot"></span><span class="legend-stack"><span class="legend-l">L4</span><span class="legend-line"></span><span class="legend-r">R2</span></span></div>
+              <div title="L3 / R3"><span class="dot"></span><span class="legend-stack"><span class="legend-l">L3</span><span class="legend-line"></span><span class="legend-r">R3</span></span></div>
+              <div title="L2 / R4"><span class="dot"></span><span class="legend-stack"><span class="legend-l">L2</span><span class="legend-line"></span><span class="legend-r">R4</span></span></div>
+              <div title="L1 / R5"><span class="dot"></span><span class="legend-stack"><span class="legend-l">L1</span><span class="legend-line"></span><span class="legend-r">R5</span></span></div>
+            </div>
+          </div>
+          <button id="btn-back-home" onclick="goBackHome()">홈</button>
+        </div>
+      </div>
+      <!-- 빈 컨테이너: game.js의 controlsDiv 참조 유지용 (모든 컨트롤은 사이드바로 이동함) -->
+      <button id="btn-fullscreen" type="button" title="Fullscreen" aria-label="Fullscreen">⛶</button>
+      <div id="controls"></div>
+      <div id="center-guide"></div>
+      <div id="bottom-panel">
+        <div id="progress-container">
+          <div id="progress-bg"></div>
+          <div id="progress-fill"></div>
+          <div id="progress-handle"></div>
+        </div>
+      </div>
+      <div id="game-wrapper">
+        <div id="game-container">
+          <canvas id="pianoCanvas"></canvas>
+          <div id="status-msg">곡을 로딩 중입니다...</div>
+        </div>
+      </div>
+      <div id="left-hand-guide" class="hand-guide">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 310" width="100%"><rect x="10" y="42" width="30" height="75" rx="15" fill="#8E24AA"/><rect x="46" y="22" width="32" height="90" rx="16" fill="#1E88E5"/><rect x="84" y="8" width="34" height="100" rx="17" fill="#43A047"/><rect x="124" y="22" width="32" height="90" rx="16" fill="#FDD835"/><rect x="162" y="68" width="28" height="60" rx="14" fill="#E53935"/><path d="M8,110 Q8,105 13,105 L177,105 Q185,105 188,112 L192,128 Q194,138 188,145 L170,160 Q160,168 148,170 L52,170 Q38,168 28,158 L12,140 Q6,132 6,122 Z" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/><rect x="7" y="185" width="34" height="42" rx="6" fill="#8E24AA"/><rect x="14" y="197" width="20" height="18" rx="3" stroke="white" stroke-width="2" fill="none"/><text x="24" y="211" text-anchor="middle" fill="white" font-family="Arial" font-size="13" font-weight="bold">5</text><rect x="45" y="185" width="34" height="42" rx="6" fill="#1E88E5"/><rect x="52" y="197" width="20" height="18" rx="3" stroke="white" stroke-width="2" fill="none"/><text x="62" y="211" text-anchor="middle" fill="white" font-family="Arial" font-size="13" font-weight="bold">4</text><rect x="83" y="185" width="34" height="42" rx="6" fill="#43A047"/><rect x="90" y="197" width="20" height="18" rx="3" stroke="white" stroke-width="2" fill="none"/><text x="100" y="211" text-anchor="middle" fill="white" font-family="Arial" font-size="13" font-weight="bold">3</text><rect x="121" y="185" width="34" height="42" rx="6" fill="#FDD835"/><rect x="128" y="197" width="20" height="18" rx="3" stroke="black" stroke-width="2" fill="none"/><text x="138" y="211" text-anchor="middle" fill="black" font-family="Arial" font-size="13" font-weight="bold">2</text><rect x="159" y="185" width="34" height="42" rx="6" fill="#E53935"/><rect x="166" y="197" width="20" height="18" rx="3" stroke="white" stroke-width="2" fill="none"/><text x="176" y="211" text-anchor="middle" fill="white" font-family="Arial" font-size="13" font-weight="bold">1</text><text x="105" y="280" text-anchor="middle" fill="white" font-family="Arial" font-size="23" font-weight="bold">왼손 = □ 안에 숫자</text></svg>
+      </div>
+      <div id="right-hand-guide" class="hand-guide">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 310" width="100%"><rect x="10" y="68" width="28" height="60" rx="14" fill="#E53935"/><rect x="44" y="22" width="32" height="90" rx="16" fill="#FDD835"/><rect x="82" y="8" width="34" height="100" rx="17" fill="#43A047"/><rect x="122" y="22" width="32" height="90" rx="16" fill="#1E88E5"/><rect x="160" y="42" width="30" height="75" rx="15" fill="#8E24AA"/><path d="M8,110 Q8,105 13,105 L177,105 Q185,105 188,112 L192,128 Q194,138 188,145 L170,160 Q160,168 148,170 L52,170 Q38,168 28,158 L12,140 Q6,132 6,122 Z" fill="#2a2a4a" stroke="#3a3a5a" stroke-width="1"/><rect x="7" y="185" width="34" height="42" rx="6" fill="#E53935"/><text x="24" y="211" text-anchor="middle" fill="white" font-family="Arial" font-size="13" font-weight="bold">1</text><rect x="45" y="185" width="34" height="42" rx="6" fill="#FDD835"/><text x="62" y="211" text-anchor="middle" fill="black" font-family="Arial" font-size="13" font-weight="bold">2</text><rect x="83" y="185" width="34" height="42" rx="6" fill="#43A047"/><text x="100" y="211" text-anchor="middle" fill="white" font-family="Arial" font-size="13" font-weight="bold">3</text><rect x="121" y="185" width="34" height="42" rx="6" fill="#1E88E5"/><text x="138" y="211" text-anchor="middle" fill="white" font-family="Arial" font-size="13" font-weight="bold">4</text><rect x="159" y="185" width="34" height="42" rx="6" fill="#8E24AA"/><text x="176" y="211" text-anchor="middle" fill="white" font-family="Arial" font-size="13" font-weight="bold">5</text><text x="105" y="280" text-anchor="middle" fill="white" font-family="Arial" font-size="23" font-weight="bold">오른손 = 숫자만</text></svg>
+      </div>
+    </div>
+  </div>
+  <div id="song-select-overlay" style="display:none;">
+    <div id="song-select-panel">
+      <div class="song-panel-header"><h2>곡 선택</h2><button id="btn-song-panel-close">✕</button></div>
+      <div id="song-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+  로컬 런처: 버튼 클릭 시 게임 스크립트를 1회 로드 후 모달 표시
+  (PIXI 미사용, 로컬 js/app.js → js/game.js 순서 로드)
+============================================================ -->
+<script>
+(function () {
+    var CAFE24_ASSET_BASE = 'https://ecimg.cafe24img.com/pg2484b41829542061/jellypiano/web/jellypiano/';
+    var CAFE24_ASSET_VERSION = '?v=152';
+    var scriptsLoaded = false;
+    var loadingPromise = null;
+
+    function loadScript(src) {
+        return new Promise(function (resolve, reject) {
+            var s = document.createElement('script');
+            s.src = src;
+            s.onload = resolve;
+            s.onerror = function () { reject(new Error('스크립트 로드 실패: ' + src)); };
+            document.body.appendChild(s);
+        });
+    }
+
+    function ensureGameLoaded() {
+        if (scriptsLoaded) return Promise.resolve();
+        if (loadingPromise) return loadingPromise;
+        // app.js 가 먼저(AudioSync 등 전역 정의), 그다음 game.js
+        loadingPromise = loadScript('js/app.js' + CAFE24_ASSET_VERSION)
+            .then(function () { return loadScript('js/renderer-pixi.js' + CAFE24_ASSET_VERSION); })
+            .then(function () { return loadScript('js/game.js' + CAFE24_ASSET_VERSION); })
+            .then(function () { scriptsLoaded = true; });
+        return loadingPromise;
+    }
+
+    function isGameRoute() {
+        return window.location.pathname.replace(/\/$/, '') === '/game';
+    }
+
+    window.launchGame = function (options) {
+        options = options || {};
+        var g = document.getElementById('jellypiano-game');
+        ensureGameLoaded().then(function () {
+            if (!options.skipRoute && !isGameRoute()) {
+                history.pushState({ view: 'game' }, '', '/game');
+            }
+            g.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            if (typeof initApp === 'function') initApp();
+        }).catch(function (e) {
+            console.error('젤리피아노 로드 실패:', e);
+            alert('게임 로드에 실패했습니다. 새로고침 후 다시 시도해주세요.');
+        });
+    };
+
+    window.goBackHome = function () {
+        var g = document.getElementById('jellypiano-game');
+        if (g) g.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.audioSync) { try { window.audioSync.pause(); } catch (e) {} }
+        if (typeof stopGame === 'function') stopGame(true);
+        if (isGameRoute()) {
+            history.pushState({ view: 'home' }, '', '/');
+        }
+    };
+
+    window.addEventListener('popstate', function () {
+        if (isGameRoute()) {
+            window.launchGame({ skipRoute: true });
+        } else {
+            window.goBackHome();
+        }
+    });
+
+    if (isGameRoute()) {
+        window.launchGame({ skipRoute: true });
+    }
+})();
+</script>
+</div>
+<!--@define(cmc_log)-->
+<!--#ez="1/2"-->
+</body>
+</html>

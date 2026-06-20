@@ -1,0 +1,1093 @@
+/* ===== 젤리피아노 통합 스타일 =====
+   base.css + styles.css 통합
+   모든 선택자를 #jellypiano-game 하위로 스코핑 (카페24 CSS 충돌 방지)
+*/
+
+/* --- 기본 리셋 (base) --- */
+#jellypiano-game, #jellypiano-game * { margin: 0; padding: 0; box-sizing: border-box; }
+#jellypiano-game {
+    --sidebar-width: 280px;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    height: var(--app-height, 100vh);
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a3a5c 0%, #2a5080 25%, #1e4268 50%, #24578a 75%, #1a3a5c 100%);
+    background-attachment: fixed;
+    color: #fff;
+    font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+}
+
+#jellypiano-game button,
+#jellypiano-game input,
+#jellypiano-game select {
+    font: inherit;
+}
+
+#jellypiano-game canvas {
+    display: block;
+}
+
+#jellypiano-game .control-group.legend {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- 게임 모달 --- */
+#jellypiano-game #game-modal {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    height: var(--app-height, 100vh);
+    background: linear-gradient(135deg, #1a3a5c 0%, #2a5080 50%, #1e4268 100%);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    transition: background-color 0.3s;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+}
+
+#jellypiano-game #game-modal::-webkit-scrollbar,
+#jellypiano-game #game-modal::-webkit-scrollbar-track,
+#jellypiano-game #game-modal::-webkit-scrollbar-thumb,
+#jellypiano-game #game-modal::-webkit-scrollbar-corner {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* top-bar: 기본 레이아웃 (display: contents로 평탄화) */
+#jellypiano-game .controls-row.top-bar .group-left,
+#jellypiano-game .controls-row.top-bar .group-right {
+    display: contents;
+}
+#jellypiano-game .controls-row.top-bar {
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+#jellypiano-game .controls-row.top-bar .song-select-tablet { order: 0; }
+#jellypiano-game .controls-row.top-bar #btn-play { order: 1; }
+#jellypiano-game .controls-row.top-bar #btn-stop { order: 2; }
+#jellypiano-game .controls-row.top-bar .control-group.legend { order: 3; }
+
+#jellypiano-game .control-group label {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+/* --- 곡 선택 버튼 --- */
+#jellypiano-game .control-group.song-select-tablet {
+    display: flex;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    position: relative;
+}
+
+#jellypiano-game .controls-row.bottom-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+#jellypiano-game .controls-row.bottom-bar .control-group-wrapper-top,
+#jellypiano-game .controls-row.bottom-bar .control-group-wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+#jellypiano-game .controls-row.bottom-bar .control-group-wrapper {
+    order: 0;
+}
+
+#jellypiano-game .controls-row.bottom-bar .control-group-wrapper-top {
+    order: 1;
+}
+
+/* --- 게임 내부 컨테이너 --- */
+#jellypiano-game #game-inner-container {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: transparent;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#jellypiano-game #game-inner-container::-webkit-scrollbar,
+#jellypiano-game #game-inner-container::-webkit-scrollbar-track,
+#jellypiano-game #game-inner-container::-webkit-scrollbar-thumb,
+#jellypiano-game #game-inner-container::-webkit-scrollbar-corner {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+#jellypiano-game #game-inner-container {
+    width: calc(100% - var(--sidebar-width));
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+#jellypiano-game #controls {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 60px;
+}
+
+/* --- 컨트롤 바 --- */
+#jellypiano-game #controls {
+    display: none !important;
+    flex-shrink: 0;
+    background: rgba(20, 55, 90, 0.65);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 12px 32px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    width: 100%;
+    box-sizing: border-box;
+    transition: opacity 0.3s ease;
+    min-height: 50px;
+    padding-right: 32px;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#jellypiano-game .controls-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+#jellypiano-game .controls-row.top-bar {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+#jellypiano-game .controls-row.bottom-bar { justify-content: center; }
+
+#jellypiano-game .controls-row.top-bar,
+#jellypiano-game .controls-row.bottom-bar {
+    gap: 12px;
+}
+#jellypiano-game .controls-row.bottom-bar {
+    box-sizing: border-box;
+}
+
+/* --- 하단 패널 (프로그레스바) --- */
+#jellypiano-game #bottom-panel {
+    width: 100%;
+    background: rgba(20, 55, 90, 0.65);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    padding: 6px 32px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    z-index: 30;
+    margin-top: 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    order: 2;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#jellypiano-game #bottom-panel::-webkit-scrollbar,
+#jellypiano-game #bottom-panel::-webkit-scrollbar-track,
+#jellypiano-game #bottom-panel::-webkit-scrollbar-thumb,
+#jellypiano-game #bottom-panel::-webkit-scrollbar-corner {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+@media (min-width: 769px) {
+    #jellypiano-game #bottom-panel {
+        position: absolute;
+        top: 0;
+        left: calc(50% + (var(--sidebar-width) / 2));
+        transform: translateX(-50%);
+        width: min(87.5vh, calc(100vw - var(--sidebar-width)));
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+#jellypiano-game #progress-container {
+    width: 100%;
+    height: 6px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#jellypiano-game #progress-bg {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.08);
+    position: absolute;
+    border-radius: 4px;
+}
+
+#jellypiano-game #progress-fill {
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff4757 0%, #ff6b7d 40%, #ff9a5c 100%);
+    position: absolute;
+    border-radius: 4px;
+    pointer-events: none;
+    box-shadow: 0 0 12px rgba(255, 71, 87, 0.5), 0 0 4px rgba(255, 71, 87, 0.3);
+    transition: width 0.1s linear;
+}
+
+#jellypiano-game #progress-handle {
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(135deg, #ff4757 0%, #ff6b7d 100%);
+    border-radius: 50%;
+    position: absolute;
+    left: 0%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 8px rgba(255, 71, 87, 0.6), 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+#jellypiano-game #progress-container:hover #progress-handle {
+    transform: translateX(-50%) scale(1.3);
+    box-shadow: 0 0 12px rgba(255, 71, 87, 0.8), 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+#jellypiano-game .hidden-controls {
+    display: none !important;
+}
+
+#jellypiano-game .group-left,
+#jellypiano-game .group-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+/* --- 곡 이름 표시 --- */
+#jellypiano-game #song-name-display {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 1000;
+    font-size: 11px;
+    color: rgba(0, 210, 255, 0.8);
+    font-weight: 500;
+    opacity: 0.8;
+    pointer-events: none;
+    display: none;
+    background: rgba(20, 55, 90, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 210, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 8px rgba(0, 210, 255, 0.1);
+}
+
+#jellypiano-game .song-select-tablet #song-name-display {
+    font-size: 12px;
+    max-width: 280px;
+    opacity: 0.75;
+}
+
+/* --- control-group --- */
+#jellypiano-game .control-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    white-space: nowrap;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    flex-shrink: 1;
+    min-width: 0;
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#jellypiano-game .control-group:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* 하단 컨트롤 박스(반복/속도/손선택/구간) 세로 높이 통일.
+   내부 요소(select/＋－버튼/체크박스) 높이가 달라도 박스 외형은 동일하게. */
+#jellypiano-game .controls-row.bottom-bar .control-group {
+    height: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+}
+
+/* --- file-upload --- */
+#jellypiano-game .file-upload {
+    position: relative;
+    overflow: visible;
+    display: inline-block;
+}
+
+#jellypiano-game .file-upload input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- legend (손가락 컬러) --- */
+#jellypiano-game .legend {
+    display: flex;
+    gap: 8px;
+    font-size: 13px;
+    margin-left: 5px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#jellypiano-game .legend > div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+#jellypiano-game .legend-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.15;
+    font-size: inherit;
+}
+#jellypiano-game .legend-l { font-size: inherit; }
+#jellypiano-game .legend-line {
+    display: block;
+    width: 1em;
+    height: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    margin: 2px 0;
+}
+#jellypiano-game .legend-r { font-size: inherit; }
+
+#jellypiano-game .legend .dot {
+    width: 14px;
+    height: 14px;
+    margin-right: 3px;
+}
+
+#jellypiano-game .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+
+#jellypiano-game .legend > div:nth-child(1) .dot { background: #ff4444; }
+#jellypiano-game .legend > div:nth-child(2) .dot { background: #ffeb3b; }
+#jellypiano-game .legend > div:nth-child(3) .dot { background: #00e676; }
+#jellypiano-game .legend > div:nth-child(4) .dot { background: #536dfe; }
+#jellypiano-game .legend > div:nth-child(5) .dot { background: #d05ce3; }
+
+#jellypiano-game .control-group.legend {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#jellypiano-game #txt-speed {
+    min-width: 40px;
+    text-align: center;
+}
+
+/* --- 기본 요소 스타일 --- */
+#jellypiano-game label {
+    font-size: 13px;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+#jellypiano-game button {
+    background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 50%, #2563eb 100%);
+    color: #000;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 210, 255, 0.25), 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+#jellypiano-game button:not(.zoom-btn) {
+    padding: 8px 14px;
+    font-size: 14px;
+}
+
+#jellypiano-game button:hover {
+    background: linear-gradient(135deg, #33dbff 0%, #5a8be5 50%, #4f8af7 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.45), 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+#jellypiano-game button:active {
+    transform: translateY(0) scale(0.97);
+    box-shadow: 0 1px 4px rgba(0, 210, 255, 0.3);
+}
+
+#jellypiano-game button.zoom-btn {
+    padding: 8px 14px;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+#jellypiano-game button.zoom-btn {
+    padding-top: 3.2px;
+    padding-bottom: 3.2px;
+}
+
+#jellypiano-game button.zoom-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+#jellypiano-game button.zoom-btn:active {
+    transform: translateY(0) scale(0.97);
+}
+
+#jellypiano-game button.stop {
+    background: linear-gradient(135deg, #ff4757 0%, #ff6b7d 50%, #e63946 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 71, 87, 0.35), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#jellypiano-game button.stop:hover {
+    background: linear-gradient(135deg, #ff6b7d 0%, #ff8a9a 50%, #ff4757 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.5);
+}
+
+#jellypiano-game button.stop:active {
+    transform: translateY(0) scale(0.97);
+    box-shadow: 0 1px 4px rgba(255, 71, 87, 0.3);
+}
+
+#jellypiano-game input[type="checkbox"] {
+    accent-color: #00d2ff;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#jellypiano-game label:has(input[type="checkbox"]) {
+    transition: color 0.2s ease;
+}
+
+#jellypiano-game label:has(input[type="checkbox"]:checked) {
+    color: #fff;
+}
+
+#jellypiano-game label:has(input[type="checkbox"]:not(:checked)) {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#jellypiano-game select {
+    background: rgba(15, 27, 46, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    max-width: 140px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='rgba(255,255,255,0.6)' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 24px;
+}
+
+#jellypiano-game select:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#jellypiano-game select:focus {
+    outline: none;
+    border-color: rgba(0, 210, 255, 0.5);
+    box-shadow: 0 0 0 2px rgba(0, 210, 255, 0.15), 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#jellypiano-game select option {
+    background: #0f1b2e;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- 게임 래퍼/컨테이너 --- */
+#jellypiano-game #game-wrapper {
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: #ffeb3b #000000;
+    display: flex;
+    position: relative;
+    background: transparent;
+    padding: 0;
+    padding-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+    overscroll-behavior: contain;
+    order: 1;
+}
+
+#jellypiano-game #game-container {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    max-width: none;
+    height: auto;
+    background: #000;
+    box-shadow: none;
+    transition: none;
+    flex-shrink: 0;
+    margin: 0;
+    bottom: 5px;
+    left: 0;
+    cursor: grab;
+}
+
+#jellypiano-game #game-container:active { cursor: grabbing; }
+
+#jellypiano-game canvas { display: block; width: 100%; height: 100%; }
+/* WebGL(PIXI) 캔버스와 2D 캔버스를 같은 영역에 겹치기 (2D가 위 = 텍스트/건반이 노트 위에) */
+#jellypiano-game #game-container canvas { position: absolute; top: 0; left: 0; }
+#jellypiano-game #game-container #pixiCanvas { z-index: 1; }
+#jellypiano-game #game-container #pianoCanvas { z-index: 2; }
+
+/* --- 상태 메시지 (안내 모달): 길게 늘어진 game-container가 아니라
+   보이는 플레이 영역 중앙에 고정 (fixed → 데스크탑은 transform된 #game-wrapper 기준,
+   모바일은 뷰포트 기준이라 항상 화면 가운데에 표시됨) --- */
+#jellypiano-game #status-msg {
+    position: relative;
+    transform: none;
+    top: 210px;
+    left: auto;
+    font-size: clamp(14px, 2.5vw, 20px);
+    color: rgba(255, 255, 255, 0.9);
+    pointer-events: none;
+    text-align: center;
+    max-width: min(80%, 460px);
+    padding: 20px 32px;
+    white-space: pre-line;
+    line-height: 1.8;
+    z-index: 10;
+    font-weight: 400;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: rgba(20, 55, 90, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.01em;
+}
+
+/* --- 좌우 분리선 (Canvas에서 렌더링) --- */
+#jellypiano-game #center-guide {
+    display: none;
+}
+
+/* --- 플로팅 줌 컨트롤 --- */
+#jellypiano-game #floating-zoom-controls {
+    position: absolute;
+    left: 0px !important;
+    background: rgba(20, 55, 90, 0.55);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    padding: 8px 14px;
+    border-radius: 24px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, background 0.2s ease;
+    z-index: 100;
+    pointer-events: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    cursor: default;
+    user-select: none;
+}
+
+#jellypiano-game #floating-zoom-controls:hover {
+    opacity: 0.9;
+    background: rgba(20, 55, 90, 0.7);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+#jellypiano-game #floating-zoom-controls.dragging {
+    opacity: 0.9;
+    cursor: grabbing;
+}
+
+#jellypiano-game #floating-zoom-controls button {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#jellypiano-game #floating-zoom-controls button:hover {
+    background: rgba(0, 210, 255, 0.3);
+    border-color: rgba(0, 210, 255, 0.5);
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.35);
+}
+
+#jellypiano-game #floating-zoom-controls button:active {
+    transform: scale(0.95);
+    background: rgba(0, 210, 255, 0.5);
+}
+
+#jellypiano-game #floating-zoom-controls span {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    min-width: 40px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    pointer-events: auto;
+}
+
+/* --- 스크롤바 (노란색) --- */
+#jellypiano-game #game-wrapper::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+    -webkit-appearance: none;
+    display: block;
+}
+#jellypiano-game #game-wrapper::-webkit-scrollbar-track {
+    background: #000000 !important;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+}
+#jellypiano-game #game-wrapper::-webkit-scrollbar-thumb {
+    background: #ffeb3b !important;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    min-height: 8px;
+}
+#jellypiano-game #game-wrapper::-webkit-scrollbar-thumb:hover { background: #ffd700 !important; }
+#jellypiano-game #game-wrapper::-webkit-scrollbar-corner { background: #000000 !important; }
+
+/* --- 손가락 색상 가이드 (game-inner-container 기준 absolute, JS로 위치/크기 동적 계산) --- */
+#jellypiano-game .hand-guide {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    overflow: hidden;
+    /* top, left, width, height 는 JS에서 동적으로 설정 */
+}
+
+#jellypiano-game .hand-guide.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#jellypiano-game .hand-guide svg {
+    max-height: 100%;
+    width: auto;
+    max-width: 90%;
+}
+
+/* --- 반응형: 세로(portrait) 모니터 대응 --- */
+@media (orientation: portrait) {
+    #jellypiano-game #game-modal { align-items: flex-start; }
+
+    /* 빈 공간 제거: 마진/높이 최적화 */
+    #jellypiano-game #game-inner-container {
+        height: 100%;
+        max-height: 100%;
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    /* 진행바 아래 여백 추가: 건반이 화면 중하단에 위치하도록 */
+    #jellypiano-game #bottom-panel {
+        margin-bottom: 100px; /* 모바일 재생바 오프셋 고정 */
+    }
+
+    /* #controls를 단일 flex-wrap 행으로 평탄화 */
+    #jellypiano-game #controls {
+        display: block;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 6px 12px;
+        gap: 6px;
+        min-height: auto;
+    }
+
+    /* 모든 중간 컨테이너를 display:contents로 평탄화 */
+    #jellypiano-game .controls-row.top-bar,
+    #jellypiano-game .controls-row.bottom-bar {
+        display: contents;
+    }
+    #jellypiano-game .controls-row.bottom-bar .control-group-wrapper-top,
+    #jellypiano-game .controls-row.bottom-bar .control-group-wrapper {
+        display: contents;
+    }
+
+    /* === 1줄: [재생] [재설정] [곡제목+곡선택] === */
+    #jellypiano-game #btn-play { order: 0; }
+    #jellypiano-game #btn-stop { order: 1; }
+    #jellypiano-game .song-select-tablet { order: 2; }
+
+    /* 1줄과 2줄 사이 줄바꿈 */
+    #jellypiano-game #controls::after {
+        content: '';
+        flex-basis: 100%;
+        height: 0;
+        order: 5;
+    }
+
+    /* === 2줄: [홈] [범례] [오른손/왼손] [구간] [반복] [속도] === */
+    #jellypiano-game #btn-back-home { order: 9; }
+    #jellypiano-game .control-group.legend {
+        order: 10;
+        display: flex !important;
+        font-size: 9px;
+        gap: 3px;
+        padding: 3px 6px;
+    }
+    #jellypiano-game .control-group.legend .dot {
+        width: 8px;
+        height: 8px;
+        margin-right: 2px;
+    }
+    #jellypiano-game .control-group.legend .legend-stack {
+        line-height: 1.05;
+    }
+    #jellypiano-game .control-group.legend > div {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+    #jellypiano-game .control-group:has(#chk-right) { order: 11; }
+    #jellypiano-game .control-group:has(#sel-section) { order: 12; }
+    #jellypiano-game .control-group:has(#sel-repeat) { order: 13; }
+    #jellypiano-game .control-group:has(#txt-speed) { order: 14; }
+
+    /* 곡 이름: 절대 위치 해제, 인라인으로 표시 */
+    #jellypiano-game #song-name-display {
+        position: static;
+        transform: none;
+        max-width: 180px;
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+
+    /* 컨트롤 컴팩트화 */
+    #jellypiano-game button:not(.zoom-btn) { padding: 5px 10px; font-size: 12px; }
+    #jellypiano-game .control-group { padding: 3px 7px; font-size: 10px; }
+    #jellypiano-game .controls-row.bottom-bar .control-group { height: 34px; }
+    #jellypiano-game select { padding: 5px 8px; font-size: 11px; padding-right: 20px; }
+}
+
+@media (orientation: portrait) and (max-width: 600px) {
+    #jellypiano-game #game-inner-container { width: 100%; }
+
+    /* 좁은 화면: 범례 점만 표시 (텍스트 숨김) */
+    #jellypiano-game .control-group.legend .legend-stack { display: none; }
+    #jellypiano-game .control-group.legend { gap: 2px; padding: 3px 5px; }
+    #jellypiano-game .control-group.legend .dot { margin-right: 0; }
+
+    #jellypiano-game #song-name-display { max-width: 120px; font-size: 9px; }
+}
+
+/* --- 곡 선택 오버레이 패널 --- */
+#jellypiano-game #song-select-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 20000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#jellypiano-game #song-select-panel {
+    background: linear-gradient(135deg, #0f1b2e 0%, #162447 50%, #1a2332 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 24px;
+    min-width: 320px;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.5), 0 0 32px rgba(0, 210, 255, 0.1);
+}
+
+#jellypiano-game .song-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#jellypiano-game .song-panel-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+}
+
+#jellypiano-game #btn-song-panel-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.2s ease;
+}
+
+#jellypiano-game #btn-song-panel-close:hover {
+    background: rgba(255, 71, 87, 0.8);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+#jellypiano-game .song-item {
+    padding: 14px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    margin-bottom: 8px;
+}
+
+#jellypiano-game .song-item:hover {
+    background: rgba(0, 210, 255, 0.1);
+    border-color: rgba(0, 210, 255, 0.3);
+}
+
+#jellypiano-game .song-item.active {
+    background: rgba(0, 210, 255, 0.15);
+    border-color: rgba(0, 210, 255, 0.5);
+}
+
+#jellypiano-game .song-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+#jellypiano-game .song-item-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+#jellypiano-game .difficulty-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+#jellypiano-game .difficulty-badge.beginner {
+    background: rgba(46, 213, 115, 0.2);
+    color: #2ed573;
+    border: 1px solid rgba(46, 213, 115, 0.4);
+}
+
+#jellypiano-game .difficulty-badge.easy {
+    background: rgba(30, 144, 255, 0.2);
+    color: #1e90ff;
+    border: 1px solid rgba(30, 144, 255, 0.4);
+}
+
+#jellypiano-game .difficulty-badge.intermediate {
+    background: rgba(255, 165, 2, 0.2);
+    color: #ffa502;
+    border: 1px solid rgba(255, 165, 2, 0.4);
+}
+
+#jellypiano-game .difficulty-badge.advanced {
+    background: rgba(255, 71, 87, 0.2);
+    color: #ff4757;
+    border: 1px solid rgba(255, 71, 87, 0.4);
+}
+
+#jellypiano-game .song-info {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+#jellypiano-game .song-composer {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#jellypiano-game .song-duration {
+    flex: 0 0 auto;
+    color: rgba(255, 255, 255, 0.68);
+    font-variant-numeric: tabular-nums;
+}

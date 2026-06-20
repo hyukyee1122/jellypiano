@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl:*)",
+      "Bash(openssl dgst:*)",
+      "Bash(openssl base64:*)",
+      "Bash(npm install:*)",
+      "Bash(node:*)",
+      "Bash(pip install:*)",
+      "Bash(python3:*)",
+      "Bash(python extract_hwp.py:*)",
+      "Bash(python extract_hwp_images.py:*)",
+      "Bash(python -c:*)",
+      "Bash(playwright install:*)",
+      "Bash(python:*)",
+      "Bash(start:*)",
+      "PowerShell(node --version)"
+    ]
+  }
+}
